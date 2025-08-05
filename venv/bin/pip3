@@ -1,4 +1,4 @@
-#!/Users/martin/dev/project/sredna_skorost/speed_monitor_clean/venv/bin/python3.12
+#!/Users/martin/dev/project/sredna_skorost/web/venv/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys

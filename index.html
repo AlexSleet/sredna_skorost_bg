@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Средна Скорост - София-Пловдив (A1/E80)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <div id="map"></div>
+    
+
+    <div class="speed-display">
+        <div class="speed-row">
+            <div class="speed-item">
+                <div class="speed-label">Текуща скорост</div>
+                <div class="speed-value" id="current-speed">0.0 км/ч</div>
+            </div>
+            <div class="speed-item">
+                <div class="speed-label">Средна скорост</div>
+                <div class="speed-value" id="average-speed">0.0 км/ч</div>
+            </div>
+        </div>
+        
+        <div class="info-box">
+            <div class="info-row">
+                <span>Прогнозна средна скорост:</span>
+                <span id="predicted-speed">0.0 км/ч</span>
+            </div>
+            <div class="info-row">
+                <span>Изминато разстояние:</span>
+                <span id="distance">0.0 км</span>
+            </div>
+            <div class="info-row" id="direction-row" style="display: none;">
+                <span>Посока на движение:</span>
+                <span id="current-direction">--</span>
+            </div>
+            <div class="info-row" style="font-size: 12px; color: #666; text-align: center;">
+                <span>Магистрала A1/E80: Вакарел → Трилистник</span>
+            </div>
+        </div>
+        
+        <!-- Auto-guidance panel - always visible -->
+        <div class="auto-guidance-box" id="auto-guidance-box">
+            <div class="auto-guidance-header">
+                <span class="auto-guidance-icon">🤖</span>
+                <span class="auto-guidance-label">Препоръка за спазване на лимита</span>
+            </div>
+            <div class="auto-guidance-content">
+                <div class="auto-guidance-target">
+                    <span>Карайте до: </span>
+                    <span id="auto-target-speed" class="target-speed">--</span>
+                    <span id="auto-target-reason" class="target-reason">за да постигнете законна средна скорост 140 км/ч</span>
+                </div>
+                <div class="auto-guidance-status" id="auto-guidance-status">
+                    Изчакване за активиране
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="control-buttons">
+        <button id="tracking-btn" onclick="toggleTracking()">
+            <span id="btn-icon">▶</span>
+            <span id="btn-text">Започни</span>
+        </button>
+        <button id="force-zone-btn" onclick="forceZoneDetection()" style="display: none;">
+            <span id="zone-btn-icon">🎯</span>
+            <span id="zone-btn-text">Намери зона</span>
+        </button>
+        <button id="pause-btn" onclick="togglePause()" style="display: none;">
+            <span id="pause-icon">⏸️</span>
+            <span id="pause-text">Пауза</span>
+        </button>
+        <button id="history-btn" onclick="showSessionHistory()" style="display: block;">
+            <span>📚</span>
+            <span>История</span>
+        </button>
+    </div>
+    
+    <!-- Session History Modal -->
+    <div id="session-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>История на сесиите</h3>
+                <button onclick="closeSessionModal()">✕</button>
+            </div>
+            <div id="session-list"></div>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

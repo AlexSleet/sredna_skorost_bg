@@ -6,6 +6,24 @@ A Flutter-based mobile application for monitoring average speed on Bulgarian hig
 
 **Sredna Skorost BG** is an open-source speed monitoring application that tracks your average speed within specific highway segments on Bulgaria's A1/E80 highway between Sofia and Plovdiv. The app uses precise GPS coordinates collected through field research to provide accurate zone detection and bidirectional monitoring.
 
+## 📱 Available Versions
+
+This project includes two implementations:
+
+### 🚀 **Flutter Mobile App** (Recommended)
+- **Native iOS/Android performance** with optimized battery usage
+- **Offline maps** and full functionality without internet
+- **Advanced features**: CarPlay support, session persistence, auto-pause/resume
+- **Production-ready** with comprehensive testing
+
+### 🌐 **Web Version** (Prototype)
+- **Universal browser access** - works on any device
+- **Original proof-of-concept** that evolved into the mobile app
+- **Development and testing** purposes
+- **Cross-platform compatibility** for quick demonstrations
+
+> **📁 Web Version**: See the [`web/`](web/) directory and its [README](web/README.md) for setup instructions.
+
 ### Key Features
 
 - **Real-time GPS tracking** with offline map support
