@@ -215,6 +215,14 @@ void _checkGPSSignal() {
 - **iOS device** with iOS 15.0+
 - **Apple Developer Account** (for App Store distribution)
 
+### ⚠️ Important Setup Notes
+
+Before following the setup instructions, ensure you have:
+1. **Correct working directory**: Always run commands from the project root directory
+2. **Connected iOS device**: For device deployment and testing
+3. **Xcode properly configured**: With valid development team selected
+4. **Network connectivity**: For downloading dependencies during setup
+
 ### Development Setup
 
 1. **Clone the repository**:
@@ -332,6 +340,34 @@ We welcome contributions to improve Sredna Skorost BG! Here's how you can help:
 - Add comments for complex algorithms
 - Include tests for new features
 - Ensure backwards compatibility
+
+## 🔧 Troubleshooting
+
+### Common Setup Issues
+
+#### Flutter App Issues
+- **Dependencies not installing**: Run `flutter clean` then `flutter pub get`
+- **iOS build fails**: Ensure Xcode is properly configured with valid development team
+- **Device not detected**: Check USB connection and enable Developer Mode on iOS device
+- **CocoaPods warnings**: These are usually harmless but can be fixed by updating Podfile platform version
+
+#### Web App Issues  
+- **Server won't start**: Ensure you're in the `web/` directory when running server scripts
+- **HTTPS certificate errors**: Run `openssl req -x509 -newkey rsa:2048 -keyout server.key -out server.crt -days 365 -nodes -subj "/CN=localhost"` in the web directory
+- **GPS not working**: HTTPS is required for location access - use HTTPS server, not HTTP
+- **Port conflicts**: Change port numbers in server scripts if default ports are occupied
+
+#### General Issues
+- **Permission errors**: Don't use `sudo` - fix permissions or use different directory
+- **Path not found**: Ensure you're in the correct project directory
+- **Git clone issues**: Check network connection and repository access rights
+
+### Getting Help
+If you encounter issues not covered here:
+1. Check existing [GitHub Issues](https://github.com/Stamenov/sredna_skorost_bg/issues)
+2. Run `flutter doctor` for Flutter-related problems
+3. Check console output for specific error messages
+4. Create a new issue with detailed error logs
 
 ## 📄 License
 

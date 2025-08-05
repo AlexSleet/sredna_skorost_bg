@@ -8,9 +8,9 @@ import time
 
 def start_server():
     try:
-        # Change to web directory
-        web_dir = '/Users/martin/dev/project/sredna_skorost/web'
-        os.chdir(web_dir)
+        # Ensure we're in the correct directory (should be run from web/ directory)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        os.chdir(script_dir)
         
         # Create SSL context
         context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)

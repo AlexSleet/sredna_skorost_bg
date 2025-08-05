@@ -51,32 +51,42 @@ python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-3. **Start the HTTPS server**:
+3. **Generate SSL certificates** (if needed):
 ```bash
-python https_server.py
+openssl req -x509 -newkey rsa:2048 -keyout server.key -out server.crt -days 365 -nodes -subj "/CN=localhost"
+cp server.crt server.cert  # Some servers expect .cert extension
 ```
 
-4. **Open in browser**:
+4. **Start the HTTPS server**:
+```bash
+python3 https_server.py
+```
+
+5. **Open in browser**:
    - Navigate to: `https://localhost:8443`
    - Accept the self-signed certificate warning
    - Grant location permissions when prompted
+
+### ⚠️ Quick HTTP Testing (Limited GPS)
+For quick testing without HTTPS setup:
+```bash
+python3 -m http.server 8080
+```
+Then visit `http://localhost:8080` (GPS may not work due to browser security)
 
 ### Alternative Server Options
 
 **Simple HTTPS Server**:
 ```bash
-python simple_https_server.py
-```
-
-**Development Server** (HTTP only - limited GPS functionality):
-```bash
-python server.py
+python3 simple_https_server.py
 ```
 
 **Using start_server.py**:
 ```bash
-python start_server.py
+python3 start_server.py
 ```
+
+**Note**: All server scripts now use relative paths and should be run from the `web/` directory.
 
 ## 📱 Mobile Access
 
