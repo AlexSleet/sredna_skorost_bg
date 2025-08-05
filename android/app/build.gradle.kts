@@ -8,7 +8,7 @@ plugins {
 android {
     namespace = "bg.sredna_skorost.app"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = "27.0.12077973"  // Required by geolocator_android and shared_preferences_android
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
