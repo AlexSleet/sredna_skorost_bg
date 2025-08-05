@@ -43,3 +43,39 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# iOS build artifacts
+/ios/build/
+/ios/Flutter/Generated.xcconfig
+/ios/Runner.xcodeproj/project.xcworkspace/xcuserdata/
+/ios/Runner.xcodeproj/xcuserdata/
+**/XCBuildData/
+
+# Web certificates and keys
+/web/server.key
+/web/server.crt
+/web/server.cert
+/web/*.log
+
+# Virtual environments
+venv/
+env/
+.env
+
+# IDE and editor files
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Personal/sensitive data
+ios/Runner.xcodeproj/project.pbxproj.backup
