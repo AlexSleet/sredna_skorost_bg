@@ -79,3 +79,6 @@ Thumbs.db
 
 # Personal/sensitive data
 ios/Runner.xcodeproj/project.pbxproj.backup
+
+# Company logos (not for open source distribution)
+../deep_sentrics_logo/

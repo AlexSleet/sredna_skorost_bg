@@ -7,6 +7,7 @@ import 'dart:math';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const MyApp());
@@ -1133,6 +1134,45 @@ class _MapScreenState extends State<MapScreen> with WidgetsBindingObserver {
           _showHistory ? _buildHistoryView() : _buildMapView(),
           if (_showResumeDialog) _buildResumeDialog(),
         ],
+      ),
+      bottomNavigationBar: _buildDeepSentricsFooter(),
+    );
+  }
+
+  Widget _buildDeepSentricsFooter() {
+    return Container(
+      height: 50,
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        border: Border(top: BorderSide(color: Colors.grey, width: 0.5)),
+      ),
+      child: InkWell(
+        onTap: () async {
+          final Uri url = Uri.parse('https://deepsentrics.com');
+          if (await canLaunchUrl(url)) {
+            await launchUrl(url, mode: LaunchMode.externalApplication);
+          }
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Created by ',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.grey,
+                ),
+              ),
+              Image.asset(
+                'assets/images/deepsentrics_logo.png',
+                height: 20,
+                fit: BoxFit.contain,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
