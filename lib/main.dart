@@ -1114,7 +1114,7 @@ class _MapScreenState extends State<MapScreen> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('София-Пловдив (A1/E80)', style: TextStyle(color: Colors.white)),
+        title: Text(_getAppBarTitle(), style: const TextStyle(color: Colors.white)),
         backgroundColor: const Color(0xFF1976D2),
         elevation: 0,
         actions: [
@@ -1137,6 +1137,16 @@ class _MapScreenState extends State<MapScreen> with WidgetsBindingObserver {
       ),
       bottomNavigationBar: _buildDeepSentricsFooter(),
     );
+  }
+
+  String _getAppBarTitle() {
+    if (_currentZoneSession != null && _activeSegment != null) {
+      // Show the actual start → end direction when in a zone
+      return _currentZoneSession!.direction;
+    } else {
+      // Show just highway designation when not in a zone
+      return 'A1/E80';
+    }
   }
 
   Widget _buildDeepSentricsFooter() {
