@@ -1169,6 +1169,16 @@ class _MapScreenState extends State<MapScreen> with WidgetsBindingObserver {
                 'assets/images/deepsentrics_logo.png',
                 height: 20,
                 fit: BoxFit.contain,
+                errorBuilder: (context, error, stackTrace) {
+                  return const Text(
+                    'DeepSentrics',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  );
+                },
               ),
             ],
           ),
