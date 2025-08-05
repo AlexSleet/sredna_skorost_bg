@@ -41,10 +41,10 @@ This project includes two implementations:
 
 ### Flutter Mobile App Interface
 
-| Main Screen | Speed Monitoring | Zone Detection | Guidance System | Session History |
+| Session History | Session History | Zone Detection | Speed Monitoring | Main Screen |
 |:---:|:---:|:---:|:---:|:---:|
-| <img src="https://github.com/user-attachments/assets/dac54538-09c9-4412-be14-9539f4be5250" width="200" alt="Main Interface"> | <img src="https://github.com/user-attachments/assets/8a564c3b-3f61-425e-9218-7b0509cf88a1" width="200" alt="Speed Monitoring"> | <img src="https://github.com/user-attachments/assets/dc70a479-bb18-435e-a2cd-d6f728232c8d" width="200" alt="Zone Detection"> | <img src="https://github.com/user-attachments/assets/9ead70b7-1557-4f51-af87-8b5220f7f873" width="200" alt="Speed Guidance"> | <img src="https://github.com/user-attachments/assets/3ec0982a-2ce7-40b7-a01e-2effd255284d" width="200" alt="Session History"> |
-| *Offline maps with GPS tracking* | *Real-time speed calculation* | *Automatic zone entry detection* | *Recommended speed guidance* | *Historical session tracking* |
+| <img src="https://github.com/user-attachments/assets/dac54538-09c9-4412-be14-9539f4be5250" width="200" alt="Session History"> | <img src="https://github.com/user-attachments/assets/8a564c3b-3f61-425e-9218-7b0509cf88a1" width="200" alt="Session History"> | <img src="https://github.com/user-attachments/assets/dc70a479-bb18-435e-a2cd-d6f728232c8d" width="200" alt="Zone Detection"> | <img src="https://github.com/user-attachments/assets/9ead70b7-1557-4f51-af87-8b5220f7f873" width="200" alt="Speed Monitoring"> | <img src="https://github.com/user-attachments/assets/3ec0982a-2ce7-40b7-a01e-2effd255284d" width="200" alt="Main Screen"> |
+| *Historical session tracking* | *Past trip compliance data* | *Automatic zone entry detection* | *Real-time speed calculation* | *Offline maps with GPS tracking* |
 
 </div>
 
