@@ -1144,8 +1144,8 @@ class _MapScreenState extends State<MapScreen> with WidgetsBindingObserver {
       // Show the actual start → end direction when in a zone
       return _currentZoneSession!.direction;
     } else {
-      // Show just highway designation when not in a zone
-      return 'A1/E80';
+      // Show nothing when not in a zone (could be anywhere - Sofia, etc.)
+      return '';
     }
   }
 
