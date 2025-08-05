@@ -19,13 +19,13 @@ def create_app_icon():
     icon = Image.new('RGBA', (base_size, base_size), (0, 0, 0, 0))
     draw = ImageDraw.Draw(icon)
     
-    # Background - Bulgarian flag colors gradient
-    # Top red section
-    draw.rectangle([0, 0, base_size, base_size//3], fill=(214, 0, 0))
+    # Background - Bulgarian flag colors (correct order: white-green-red)
+    # Top white section
+    draw.rectangle([0, 0, base_size, base_size//3], fill=(255, 255, 255))
     # Middle green section  
-    draw.rectangle([0, base_size//3, base_size, 2*base_size//3], fill=(0, 150, 57))
-    # Bottom white section
-    draw.rectangle([0, 2*base_size//3, base_size, base_size], fill=(255, 255, 255))
+    draw.rectangle([0, base_size//3, base_size, 2*base_size//3], fill=(0, 150, 110))
+    # Bottom red section
+    draw.rectangle([0, 2*base_size//3, base_size, base_size], fill=(214, 38, 18))
     
     # Draw speedometer arc
     center_x = base_size // 2
@@ -80,7 +80,7 @@ def create_app_icon():
         pass
     
     # Save all icon sizes
-    icon_dir = "ios/Runner/Assets.xcassets/AppIcon.appiconset"
+    icon_dir = "../ios/Runner/Assets.xcassets/AppIcon.appiconset"
     
     for size, scale in sizes:
         actual_size = int(size * scale)
@@ -97,6 +97,69 @@ def create_app_icon():
         filepath = os.path.join(icon_dir, filename)
         rgb_icon.save(filepath, "PNG")
         print(f"Created {filename}")
+    
+    # Also create Android icons
+    android_sizes = {
+        'mipmap-mdpi': 48,
+        'mipmap-hdpi': 72,
+        'mipmap-xhdpi': 96,
+        'mipmap-xxhdpi': 144,
+        'mipmap-xxxhdpi': 192
+    }
+    
+    for folder, size in android_sizes.items():
+        android_dir = f"../android/app/src/main/res/{folder}"
+        resized = icon.resize((size, size), Image.Resampling.LANCZOS)
+        
+        # Convert to RGB for PNG saving
+        rgb_icon = Image.new('RGB', (size, size), (255, 255, 255))
+        rgb_icon.paste(resized, mask=resized.split()[3] if len(resized.split()) > 3 else None)
+        
+        filepath = os.path.join(android_dir, "ic_launcher.png")
+        rgb_icon.save(filepath, "PNG")
+        print(f"Created Android {folder}/ic_launcher.png")
+    
+    # Create web favicons
+    web_sizes = [16, 32, 192, 512]
+    web_dir = "../web"
+    
+    # Create standard favicon sizes
+    for size in web_sizes:
+        resized = icon.resize((size, size), Image.Resampling.LANCZOS)
+        
+        # Convert to RGB for PNG saving
+        rgb_icon = Image.new('RGB', (size, size), (255, 255, 255))
+        rgb_icon.paste(resized, mask=resized.split()[3] if len(resized.split()) > 3 else None)
+        
+        if size == 16:
+            filepath = os.path.join(web_dir, "favicon.ico")
+            rgb_icon.save(filepath, "ICO")
+            print(f"Created web favicon.ico")
+        else:
+            filename = f"favicon-{size}x{size}.png"
+            if size == 192:
+                # Also save as icons/Icon-192.png for Flutter web
+                filename = "favicon.png"
+            filepath = os.path.join(web_dir, filename)
+            rgb_icon.save(filepath, "PNG")
+            print(f"Created web {filename}")
+    
+    # Create Flutter web icons directory if needed
+    flutter_web_dir = "../web/icons"
+    if not os.path.exists(flutter_web_dir):
+        os.makedirs(flutter_web_dir)
+    
+    # Create Flutter web icons
+    flutter_web_sizes = [192, 512]
+    for size in flutter_web_sizes:
+        resized = icon.resize((size, size), Image.Resampling.LANCZOS)
+        rgb_icon = Image.new('RGB', (size, size), (255, 255, 255))
+        rgb_icon.paste(resized, mask=resized.split()[3] if len(resized.split()) > 3 else None)
+        
+        filename = f"Icon-{size}.png"
+        filepath = os.path.join(flutter_web_dir, filename)
+        rgb_icon.save(filepath, "PNG")
+        print(f"Created Flutter web icons/{filename}")
 
 if __name__ == "__main__":
     try:
