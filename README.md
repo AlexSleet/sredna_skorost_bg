@@ -12,8 +12,9 @@ This project includes two implementations:
 
 ### 🚀 **Flutter Mobile App** (Recommended)
 - **Native iOS/Android performance** with optimized battery usage
+- **Cross-platform support**: Works on iPhone, iPad, and Android devices
 - **Offline maps** and full functionality without internet
-- **Advanced features**: CarPlay support, session persistence, auto-pause/resume
+- **Advanced features**: CarPlay support (iOS), session persistence, auto-pause/resume
 - **Production-ready** with comprehensive testing
 
 ### 🌐 **Web Version** (Prototype)
@@ -211,16 +212,26 @@ void _checkGPSSignal() {
 ### Prerequisites
 
 - **Flutter SDK** (3.0.0 or higher)
-- **Xcode** (for iOS deployment)
+
+#### For iOS Development:
+- **Xcode** (16.0+ recommended)
 - **iOS device** with iOS 15.0+
 - **Apple Developer Account** (for App Store distribution)
+
+#### For Android Development:
+- **Android Studio** (2023.1.1+ recommended)
+- **Android SDK** (API level 24+)
+- **Android device** with Android 7.0+ (API level 24)
+- **Google Play Developer Account** (for Play Store distribution)
 
 ### ⚠️ Important Setup Notes
 
 Before following the setup instructions, ensure you have:
 1. **Correct working directory**: Always run commands from the project root directory
-2. **Connected iOS device**: For device deployment and testing
-3. **Xcode properly configured**: With valid development team selected
+2. **Connected device**: iOS device or Android device for deployment and testing
+3. **Development environment configured**: 
+   - iOS: Xcode with valid development team selected
+   - Android: Android Studio with SDK properly configured
 4. **Network connectivity**: For downloading dependencies during setup
 
 ### Development Setup
@@ -236,19 +247,36 @@ cd sredna_skorost_bg
 flutter pub get
 ```
 
-3. **Install iOS dependencies**:
+3. **Platform-specific setup**:
+
+#### iOS Setup:
 ```bash
 cd ios && pod install && cd ..
 ```
 
+#### Android Setup:
+```bash
+# Ensure Android SDK is configured (check with flutter doctor)
+flutter doctor --android-licenses  # Accept licenses if needed
+```
+
 4. **Run on device**:
 ```bash
+# List available devices
+flutter devices
+
+# Run on specific device
 flutter run -d <device-id>
+
+# Or run on any connected device
+flutter run
 ```
+
+## 📱 Platform-Specific Configuration
 
 ### iOS Configuration
 
-The app requires location permissions configured in `ios/Runner/Info.plist`:
+Location permissions are configured in `ios/Runner/Info.plist`:
 
 ```xml
 <key>NSLocationWhenInUseUsageDescription</key>
@@ -257,13 +285,43 @@ The app requires location permissions configured in `ios/Runner/Info.plist`:
 <string>Това приложение използва GPS за следене на средната скорост в зони за контрол на скоростта.</string>
 ```
 
-### Building for Release
+### Android Configuration
 
+Location permissions are configured in `android/app/src/main/AndroidManifest.xml`:
+
+```xml
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+```
+
+## 🔨 Building for Release
+
+### iOS Release Build
 ```bash
 flutter build ios --release
 ```
-
 Then use Xcode to archive and distribute via TestFlight or App Store.
+
+### Android Release Build
+```bash
+# Quick build with build script
+./android/build_android.sh
+
+# Or manual build
+flutter build apk --release
+# APK location: build/app/outputs/flutter-apk/app-release.apk
+```
+
+### Android App Bundle (for Play Store)
+```bash
+flutter build appbundle --release
+# AAB location: build/app/outputs/bundle/release/app-release.aab
+```
+
+> **📁 Android Development**: See the [`android/`](android/) directory for detailed Android setup, building, and distribution guides:
+> - [Android Development Guide](android/README_ANDROID.md) - Comprehensive Android setup and development
+> - [APK Distribution Guide](android/DISTRIBUTION.md) - Quick guide for sharing Android APKs
 
 ## 📱 Usage Guide
 
@@ -348,8 +406,21 @@ We welcome contributions to improve Sredna Skorost BG! Here's how you can help:
 #### Flutter App Issues
 - **Dependencies not installing**: Run `flutter clean` then `flutter pub get`
 - **iOS build fails**: Ensure Xcode is properly configured with valid development team
-- **Device not detected**: Check USB connection and enable Developer Mode on iOS device
+- **Android build fails**: Ensure Android SDK is installed and configured (run `flutter doctor`)
+- **Device not detected**: Check USB connection and enable Developer Mode/USB Debugging
 - **CocoaPods warnings**: These are usually harmless but can be fixed by updating Podfile platform version
+
+#### iOS-Specific Issues
+- **Code signing errors**: Select valid development team in Xcode project settings
+- **Provisioning profile issues**: Ensure device is registered in Apple Developer account
+- **CarPlay not working**: Requires paid Apple Developer Program membership
+
+#### Android-Specific Issues
+- **Android SDK not found**: Install Android Studio and configure SDK path
+- **Gradle build errors**: Update to latest Android Gradle Plugin version
+- **APK install fails**: Enable "Unknown sources" in Android settings
+- **Location permissions denied**: Grant location permissions in Android app settings
+- **Build tools version errors**: Update Android SDK build tools to latest version
 
 #### Web App Issues  
 - **Server won't start**: Ensure you're in the `web/` directory when running server scripts
