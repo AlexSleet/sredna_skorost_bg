@@ -716,23 +716,8 @@ function autoDetectDirection(lat, lng, heading) {
     // Need enough data points for reliable detection
     if (directionHistory.length < 8) return;
     
-    // Find which highway segment we're on
-    let nearestSegment = null;
-    let minDistance = Infinity;
-    
-    for (const segment of HIGHWAY_SEGMENTS) {
-        if (isPointNearRoute(lat, lng, segment.waypoints, 10)) {
-            const avgDistance = segment.waypoints.reduce((sum, wp) => {
-                return sum + calculateDistance(lat, lng, wp[0], wp[1]);
-            }, 0) / segment.waypoints.length;
-            
-            if (avgDistance < minDistance) {
-                minDistance = avgDistance;
-                nearestSegment = segment;
-            }
-        }
-    }
-    
+    // Find which highway segment we're on (enhanced detection)
+    const nearestSegment = detectHighwaySegment(lat, lng);
     if (!nearestSegment) return;
     
     // Determine direction using movement vector analysis
@@ -767,6 +752,42 @@ function autoDetectDirection(lat, lng, heading) {
             showMessage(`🧭 Засечена посока: ${zoneName}`, 'success');
         }
     }
+}
+
+// Detect which highway segment the user is on (similar to Flutter logic)
+function detectHighwaySegment(lat, lng) {
+    let nearestSegment = null;
+    let minDistance = Infinity;
+    
+    const DETECTION_BUFFER = 0.005; // About 500m buffer for zone detection
+    
+    for (const segment of HIGHWAY_SEGMENTS) {
+        // Check if near start or end points (with buffer)
+        const distToStart = calculateDistance(lat, lng, segment.endpoints[0].lat, segment.endpoints[0].lng);
+        const distToEnd = calculateDistance(lat, lng, segment.endpoints[1].lat, segment.endpoints[1].lng);
+        
+        // Check if point is near the route
+        if (isPointNearRoute(lat, lng, segment.waypoints, 10)) {
+            const avgDistance = segment.waypoints.reduce((sum, wp) => {
+                return sum + calculateDistance(lat, lng, wp[0], wp[1]);
+            }, 0) / segment.waypoints.length;
+            
+            if (avgDistance < minDistance) {
+                minDistance = avgDistance;
+                nearestSegment = segment;
+            }
+        }
+        
+        // Also check if near endpoints with buffer (for better zone entry detection)
+        if (distToStart < DETECTION_BUFFER || distToEnd < DETECTION_BUFFER) {
+            if (distToStart < minDistance || distToEnd < minDistance) {
+                minDistance = Math.min(distToStart, distToEnd);
+                nearestSegment = segment;
+            }
+        }
+    }
+    
+    return nearestSegment;
 }
 
 // Determine travel direction on a highway segment using movement analysis
@@ -1764,6 +1785,28 @@ function togglePause() {
     // Save session state
     if (sessionId) {
         saveSession();
+    }
+}
+
+// Center on location function
+function centerOnLocation() {
+    if (userMarker && map) {
+        const latlng = userMarker.getLatLng();
+        map.setView(latlng, 15, {
+            animate: true,
+            duration: 0.5
+        });
+        
+        // Visual feedback
+        if (userMarker) {
+            const originalRadius = 10;
+            userMarker.setStyle({ radius: 15 });
+            setTimeout(() => {
+                userMarker.setStyle({ radius: originalRadius });
+            }, 300);
+        }
+    } else {
+        showMessage('Няма налична локация', 'warning');
     }
 }
 
