@@ -1,0 +1,386 @@
+[
+  {
+    "section_name": "Вакарел – Ихтиман",
+    "length_km": 19,
+    "start_point": "Между Вакарел",
+    "end_point": "Ихтиман",
+    "start_coordinates": {
+      "lat": 42.5593528,
+      "lng": 23.7097576
+    },
+    "end_coordinates": {
+      "lat": 42.4377012,
+      "lng": 23.8162903
+    },
+    "verification": {
+      "expected_distance_km": 19,
+      "actual_distance_km": 21.215,
+      "distance_verified": true
+    },
+    "route_geometry": "_kwbG}xuoCGYqB~@kEvBeElBuBbAuCtAcEnB{B`AgE|AsKzDbArNjAxPBNNr@Zv@Zd@HL`@`@l@Zf@NfGh@`BLZFjAXhBv@hDlB~JrFvDnBtCzA^Jx@Vp@BbA@x@MtAa@bA[h@QN?~@F`AZp@j@hAlAjCfDRV`@f@x@v@^iAj@oBl@cC@_@CWKQa@i@OWEY?m@B_@h@aCESLe@X}@f@aBtAqDpIsRxEkKhG_Nh@mAxDaJzEsKnFoLpEiKtCmGdFqJlKkQ~CqFpDcHl@oAdAuBvC{Gv@oBl@sAlCqHvAcEn@gB~FmQ`B}EzD}JzHuPjGiMp@qAvE}HrAqBjDsE`C{CfDwDfBcBhFsEz@u@zCyBdBmAxHuEfKsF|GsDpHeElCiB~DqDvBgCj@u@rCkEbEkI`@y@P_@xFkL~EyJ|B}DnC_EtBaCxDmDjDuCtYeVlQgOz@s@rIgHzAmAtG_GfCqCrCeDrC_F|CkGdHoPpB{ENE|@cBd@o@~@_AjBaB`BqAZOTKL?VB^DTFLDrAlBjAdB~BhDfBhClBoA|IyF~B{AzPyK|SyMlLoH|Z_StBqAnA}@j@g@|EcFpE}Erb@yc@jP{PzBuBnAcAvBoAzAs@dDcAlCw@zCs@~FmBtAk@bAaAf@y@~EaLdD}H`BkCrCmD|FeInK_OhEiGtMoQZbAv@|DdArDjCrJh@~A`@n@|@hBN^lAnG?tABbF",
+    "status": {
+      "geocoding": "success",
+      "directions": "success"
+    }
+  },
+  {
+    "section_name": "Разклон за Костенец – Разклон за Мухово (вкл. тунел \"Траянови врата\")",
+    "length_km": 23,
+    "start_point": "От разклона за Костенец",
+    "end_point": "До разклона за Мухово",
+    "start_coordinates": {
+      "lat": 42.3090467,
+      "lng": 23.859738
+    },
+    "end_coordinates": {
+      "lat": 42.42114369999999,
+      "lng": 23.9958465
+    },
+    "verification": {
+      "expected_distance_km": 23,
+      "actual_distance_km": 32.693,
+      "distance_verified": false
+    },
+    "route_geometry": "qnfaGkbspC}HtG{GvEyDhAaGXqHyA}DcCmC}CmEgIsEmCuAqBaDmD}HoFcDaD{B}E}@cB{BqBiBcBaCgLe@kBm@m@yDqBiH_BoBSoFXaGZg@Mq@qA_@iCqAgCmBeIqBwJqFgIuCoGsBiA_EImIa@_OkFoNiHoLkDmH\\{FzCqBd@oCLoCQwE_@qJ`@yDGaCAuA^oEtB}Cd@}D[qBs@oCgAaHaAqEoDmBiB{DaBoF{@uAAwBc@yB}AaBc@mAF{Ap@wI~F_EnD}Wr\\eEjDmErCeGl@wMh@oHhBoUbIcD|AwKtHuVbHuJ`DsFdCmYlJoKxEqDdCqAl@c@?gAg@a@s@m@sEk@oGQwA_@iAUWGmCA{A]}B_BsEmAgBkOsMmHaZiAyPq@cH_BsEiJkPYoBq@kLi@e@wCAo@f@{BxC_EbCm@D}KaJeDyEYyBc@eFPoBbAiAtB]dBm@Ve@DwBsBoEkA}Dy@gEuBoCy@i@iCoAaCqEVmApA{AA}C_AgBmAk@eF~A}COgKAe@QMcAGyDaH{BoEaCsAbA_ChEm@pEiBfFsAzAeBBoC_EmAk@oDIcEpDgAQo@{E_EkF_C}BQeALk@|@o@nBuBbEqH|AqBpAMfARrAi@hCgBf@sCo@eDk@aCZcDrA{Bz@i@lDMdDuCYuAuAiAWiAVk@tDkE?u@g@o@eEgAWe@LiG_BiCyAs@a@YAmApEcDdDs@z@o@dEyFrDsD^y@BoBLsAhAiCvFcEAw@_Am@iHi@eAEaHbBuD|Ck@Vq@a@GgEa@}ITuBrAqBpAs@hBaFXiDjAsDGkAcBcEeCg@c@s@M_E{@sDrBuEL}AOiCw@eCKcGu@eDd@gB~BkHlAoEnD_DtBoD^sASuASuA`@gBh@_@fCPrHn@p@c@v@iDt@u@fA_AdBoD\\eBiCwEEoGcCwBu@Q{AQ_@k@BoAp@cBz@qCXeCbIcDjG{BrB_@`GC|D}AjBNvAk@nAiAXk@E_DNcFOmHf@uAfDaA~AiBtAMfBI|AqHb@WbARdBb@~@WVu@KqErBoGw@qDAcArA}CVaET_AlE{@pBy@tC}DnDqAr@c@\\qA@oDm@aD`B}Cb@yCOoA_B_BeCf@cHtBo@Uw@gCZeFm@cCsEhA{@Me@o@E}Eg@sCk@_@y@T}CdHi@vDwC`EMtFs@f@qCyA{A_@u@LmCxGKtBULc@GmAgD@{@l@oDDiEfDkM?iBa@wAkA}@aDkBiAaAiChA{@w@@kB`B{MDqFcC_CImBDkCuAwCqAo@uCaA@sAj@qCHkEF_IvBuI",
+    "status": {
+      "geocoding": "success",
+      "directions": "success"
+    }
+  },
+  {
+    "section_name": "Разклон за Костенец – Тунел \"Траянови врата\"",
+    "length_km": 9,
+    "start_point": "От разклона за Костенец",
+    "end_point": "До тунел \"Траянови врата\"",
+    "start_coordinates": {
+      "lat": 42.3090467,
+      "lng": 23.859738
+    },
+    "end_coordinates": {
+      "lat": 42.354889,
+      "lng": 23.9177034
+    },
+    "verification": {
+      "expected_distance_km": 9,
+      "actual_distance_km": 14.404,
+      "distance_verified": false
+    },
+    "route_geometry": "qnfaGkbspCqCbCu@j@uBdBqCxBu@f@sAt@mBn@kAXkBTwAD}@AsC[qBg@k@UaBw@}@o@][[]s@u@}@iAy@uAoAaCcAoBi@k@c@WeCiAYSU]e@_Ao@eAi@m@gAy@}CmBiAw@uAiAqB_BQS_@m@sAqCg@kA_@y@]i@_@a@{AoAyAoAOSWi@m@wC{@eFQ_ASk@U[WQyDqB_Co@iDo@aAQm@AoFXoEZq@?g@MSU]{@_@iCWy@y@mA]k@Qq@}@gFkAsHM]We@eDwEkAoBq@wAs@mBSc@[e@g@e@k@Y_@IuAEiBC}EIg@C_@Eg@MmCaAqJiDw@YkCoAqFcDy@[kGwBiA]e@Ks@Io@?aBDuAHeAL_Bt@{CdBm@TcANgAFgADc@AkBOwE_@m@?u@B{BViADW?o@?yDGaCA}@PWLcBfAy@\\q@Ne@HwBZi@@i@Ck@E}@Sy@Ww@[s@[{Ak@_ASgCYyASe@Qk@]]YaBeBq@s@{@u@kAo@oBq@oCq@_BIuAA{@I{@YyB}Aq@Yo@I_@?m@Fm@Rm@\\}@j@yGrE{AfA{@x@g@l@_GrHsBfCM]Gi@?ODKZ_@nBgBl@m@Ze@v@{Ad@cATg@\\cABg@ISkAmAu@k@SEO?OD[X}@pBiAfC}@hA}AzA]\\]R]@MEMQEICa@?UH_Ab@aDxAeLt@qGPq@Te@p@eAt@kAZ_AHu@Ck@q@qBIa@Ee@EoBBwBIe@M_@q@cAESEc@B]JYXa@b@{@F[Dg@K_AeCoEyAgCWYOMUEUA_@Do@Pm@DMEOKGIWcAU_A]wAKOWKS?i@JsAJSa@E_@Hc@~ByFReA?eAIkABKLQFCZBh@LTAb@D`Bn@\\?NGNMXk@Ny@DcCHi@JQ\\INApBHPEXUNSb@_ARq@H_@?m@Ic@_@i@y@q@UYMc@Ca@D[JU\\WdAWb@]z@qAVYLYJWBu@Go@SoCIg@I]}@}BA_@Fm@r@kBrGgPN_@PMTKREZK~@e@hBmAbCmARSV]z@_BHW@WCo@EsABQf@W`@QVYj@w@NINCxAHh@GVGt@[TShA{AX_@zBkCtCkCf@m@h@o@rB}A^b@x@x@RLXF|ABfAKnB[fAK~@QhCu@vCm@~Bk@jCk@dAOt@E`AA|@HvATfALzCL",
+    "status": {
+      "geocoding": "success",
+      "directions": "success"
+    }
+  },
+  {
+    "section_name": "Разклон за Велинград – Разклон за Калугерово",
+    "length_km": 10,
+    "start_point": "От разклона за Велинград",
+    "end_point": "До разклона за Калугерово",
+    "start_coordinates": {
+      "lat": 42.0275439,
+      "lng": 23.9915523
+    },
+    "end_coordinates": {
+      "lat": 42.326786,
+      "lng": 24.1699052
+    },
+    "verification": {
+      "expected_distance_km": 10,
+      "actual_distance_km": 48.729,
+      "distance_verified": false
+    },
+    "route_geometry": "yno_GuylqCdEV@e@lDqMhB_GLBN[QYMDeAgA{BsAgDaAeGUoAuDmFyOCiDHaEoFmNeCuGASd@qAr@gGNstA^_uB^kdBFi[q@i\\q@yI{AcD{LiE_GuFaDoD{CoAoIsCwToG}A[wLbAgDVaBSsMiEgGE{@R_GbD_EpBiB~AiClEcH~FwIzIyE`DeArAeCvFwExDsDjCiD`EuB|BkI~@kBlA}DbHwAt@eALaCq@cDoCmB{@sJy@oAF}Aj@cE`AyR}AuL_EcHkG{MkEqAqA{CyFwAaAuDq@oD_BeDqA_DA_CLuBl@cCx@mCXwGE_AOy@w@a@cAc@aD?eDf@cF\\uCQeDsFaQaAcENwHEyBuAiBkBEsD\\{@g@w@yAgHmK{AuAkCwC]iCxB{LCeAg@{AqDsCkFaGoCcGcCwGy@i@wAEwBn@yACmAo@QkCfAwKtAsEZyEg@}@gEiB[s@z@iB~D{Br@gDIeAiDoDe@qAOiCa@cAqBmBwDiCgC_FqAgDs@k@yDPaCcA{DkBmAIaCAcAa@Ym@CgB@yC_@s@sBiCoBuKaD}Jo@iBaAu@sI_FkCkBqASeH@sAU{@{AoDiNo@uA}A]mBj@i@VuAtBw@~@gAh@c@SIeAUiF_@eAkBeAaDq@s@gDCgFWmA_BuB}AcAu@HcFrDwBnAq@?uHaCe@Yu@mBa@sDUm@}A_@qFZgAdAQjCYfAi@b@uAJ}A_DsBoBw@OgEl@yCVeBgBmAeAsAEmCRwBn@_BMWOyAuCOsH]yDw@oAs@i@eAOwEfAeBZo@QeDuFy@uBw@uB_Ag@c@C{@XoAzBcBrCoA\\sAYyBiFa@_@sASsATgEvBkAHmAqAYeCPkAn@oB`Ay@vD_C^iAWsC[sAw@eAgEeDm@_C~@eKkDiMUg@w@_@iG@{IlAkIlFgGpEgQxJeM~GgJrBqMtBeo@xMgDBor@}B{r@}BeBEmAa@ISOI_@PoBKqAYaB]uS_FsVeGoGyAwKcCiIyC_DyA_KcHiJuGk@sAiCqQuHuh@sDcViJm[mV{w@wE}GiCyBsE}BsDsBaK_GsBw@eCK}ZnAes@`Cmb@nBeTn@a@QSFeA\\ke@rBel@zBcAWyI_PyBqF}B_DgD}CaCeF{CoGcDaHo@AUBwEp@g[hEuY`EyHjBqRtFyv@|UgPrEqM~@sCRsW~Ia@NqOzBmCXoBNiCWiFg@cE@kKXmAh@k@bAmEpIwAzBiA\\qBJmJ^o_@`BaCi@{KrCqDMk@S}@kDoBkMiBiCgAa@iAmBoBcF",
+    "status": {
+      "geocoding": "success",
+      "directions": "success"
+    }
+  },
+  {
+    "section_name": "Пътен възел Пазарджик – Пътен възел Цалапица",
+    "length_km": 22,
+    "start_point": "От пътен възел Пазарджик",
+    "end_point": "До пътен възел Цалапица",
+    "start_coordinates": {
+      "lat": 42.1927654,
+      "lng": 24.3335662
+    },
+    "end_coordinates": {
+      "lat": 42.180198,
+      "lng": 24.5681231
+    },
+    "verification": {
+      "expected_distance_km": 22,
+      "actual_distance_km": 22.507,
+      "distance_verified": true
+    },
+    "route_geometry": "yvo`GoposC]ZMEECEDSVt@xA`AfBR\\UHu@RM]O_@Ye@qAsAa@c@_DuB}@m@gDkBWQOKv@s@HSRs@dAaCn@oAdA{@NO`AeBXi@d@s@v@g@LCd@?dANdAXRD?B@D@DFFHBFALM@E?CbAJrBEJ?RHx@p@@DDFHFL?JGFON}@n@uAhAoDvDiLNm@HEb@cA|BiEj@iAh@oBHk@x@aN\\uFLgAToFHgCFkECwED{@@WBCTe@D]?]CYEIGg@K_@YgBKqAQwFg@gUo@aYEaAGa@EiAI_DYqMg@iVQkH]}PMcIJoG^iLf@eQn@wSPuGtAwd@f@iQ^uLf@cPj@aS\\yLp@qTt@wUnBsn@ZiLJq@JeB@c@XwBF?BAHGLW?QG[CCFq@d@yDRyA@[j@yDd@uCv@cFhEqXlDyTxCsRvIuj@x@aFl@}ERkDb@}RPoFlAyi@pAgk@RaJHuANyAPiATcAl@kBhDsJbNi`@vBeGvBmGpW{t@rCgIl@oBPeA`@}EdAyN~Csb@jBiWxCca@tD{f@dFwr@pDkg@bKguA^}Eb@sFN{AFmBDyADMDo@DMD?HEJKBM@YIYQIM?IBEDQAm@IiCaBqBuAyCsB{QcMeNoJq]cVeAw@cGcEw@m@sD_CsDmCe@UoB{@cAw@m@_@s@m@aDqDoAmAs@i@}@k@qBgA{@]aA]",
+    "status": {
+      "geocoding": "success",
+      "directions": "success"
+    }
+  },
+  {
+    "section_name": "Пътен възел Пазарджик – Пътен възел Пловдив Запад",
+    "length_km": 28,
+    "start_point": "От пътен възел Пазарджик",
+    "end_point": "До пътен възел Пловдив Запад",
+    "start_coordinates": {
+      "lat": 42.1927654,
+      "lng": 24.3335662
+    },
+    "end_coordinates": {
+      "lat": 42.12532420000001,
+      "lng": 24.6882066
+    },
+    "verification": {
+      "expected_distance_km": 28,
+      "actual_distance_km": 34.596,
+      "distance_verified": false
+    },
+    "route_geometry": "yvo`GoposC]ZMEECEDSVt@xA`AfBR\\UHu@RM]O_@Ye@qAsAa@c@_DuB}@m@gDkBWQOKv@s@HSRs@dAaCn@oAdA{@NO`AeBXi@d@s@v@g@LCd@?dANdAXRD?B@D@DFFHBFALM@E?CbAJrBEJ?RHx@p@@DDFHFL?JGFON}@n@uAhAoDvDiLNm@HEb@cA|BiEj@iAh@oBHk@x@aN\\uFLgAToFHgCFkECwED{@@WBCTe@D]?]CYEIGg@K_@YgBKqAQwFg@gUo@aYEaAGa@EiAI_DYqMg@iVQkH]}PMcIJoG^iLf@eQn@wSPuGtAwd@f@iQ^uLf@cPj@aS\\yLp@qTt@wUnBsn@ZiLJq@JeB@c@XwBF?BAHGLW?QG[CCFq@d@yDRyA@[j@yDd@uCv@cFhEqXlDyTxCsRvIuj@x@aFl@}ERkDb@}RPoFlAyi@pAgk@RaJHuANyAPiATcAl@kBhDsJbNi`@vBeGvBmGpW{t@rCgIl@oBPeA`@}EdAyN~Csb@jBiWxCca@tD{f@dFwr@pDkg@bKguA^}Eb@sFN{AFmBDyADMDo@DMD?HEJKBM@YIYIGCAIm@AgCPuIFwAHoG\\{TXuRPmL^sSLiJx@yf@LcMPuIbBgfAt@yc@bAap@TsMFyEHg@XaSAo@DwCLeI^mV\\oTPwILwHXoDr@}JHg@~@yKPaC?g@ZwETqDBeDSsNo@wb@@}HD_DNaRLwKJyMRyUH}P^y]BmEBoBJ_Cn@mIVmEZsE~@aOf@{GNiBDMJiAJOZWPIXUVo@Xi@TSTEP?`@@rA?pNv@L?rl@bDnP|@vEV\\JxLl@dAHXCfAHb@BbBHn@d@T`@PnAI~CHl@NXPLf@RxALR{FFuBBo@HsA`@gLEa@HcBJcDJyBXkHDgDRoD^yFb@}FhAwL~@}Kh@eHBULBzBh@zHlBnAb@jD~AxDdBNHtA^~Ad@",
+    "status": {
+      "geocoding": "success",
+      "directions": "success"
+    }
+  },
+  {
+    "section_name": "Пътен възел Пазарджик – Пътен възел Пловдив Север",
+    "length_km": 35,
+    "start_point": "От пътен възел Пазарджик",
+    "end_point": "До пътен възел Пловдив Север",
+    "start_coordinates": {
+      "lat": 42.1927654,
+      "lng": 24.3335662
+    },
+    "end_coordinates": {
+      "lat": 42.1354079,
+      "lng": 24.7452904
+    },
+    "verification": {
+      "expected_distance_km": 35,
+      "actual_distance_km": 39.267,
+      "distance_verified": true
+    },
+    "route_geometry": "yvo`GoposC]ZMEECEDSVt@xA`AfBR\\UHu@RM]O_@Ye@qAsAa@c@_DuB}@m@gDkBWQOKv@s@HSRs@dAaCn@oAdA{@NO`AeBXi@d@s@v@g@LCd@?dANdAXRD?B@D@DFFHBFALM@E?CbAJrBEJ?RHx@p@@DDFHFL?JGFON}@n@uAhAoDvDiLNm@HEb@cA|BiEj@iAh@oBHk@x@aN\\uFLgAToFHgCFkECwED{@@WBCTe@D]?]CYEIGg@K_@YgBKqAQwFg@gUo@aYEaAGa@EiAI_DYqMg@iVQkH]}PMcIJoG^iLf@eQn@wSPuGtAwd@f@iQ^uLf@cPj@aS\\yLp@qTt@wUnBsn@ZiLJq@JeB@c@XwBF?BAHGLW?QG[CCFq@d@yDRyA@[j@yDd@uCv@cFhEqXlDyTxCsRvIuj@x@aFl@}ERkDb@}RPoFlAyi@pAgk@RaJHuANyAPiATcAl@kBhDsJbNi`@vBeGvBmGpW{t@rCgIl@oBPeA`@}EdAyN~Csb@jBiWxCca@tD{f@dFwr@pDkg@bKguA^}Eb@sFN{AFmBDyADMDo@DMD?HEJKBM@YIYIGCAIm@AgCPuIFwAHoG\\{TXuRPmL^sSLiJx@yf@LcMPuIbBgfAt@yc@bAap@TsMFyEHg@XaSAo@DwCLeI^mV\\oTPwILwHXoDr@}JHg@~@yKPaC?g@ZwETqDBeDSsNo@wb@@}HD_DNaRLwKJyMRyUH}P^y]BmEBoBJ_Cn@mIVmEZsE~@aOf@{GNiBDMJiAJOZWPIXUVo@Au@Ko@EGKKEGWs@Om@?u@h@{Ib@kIAYRsCTsDF_DYwRo@w[[eQQuI[oEYqCMgCaC_XcBcR{@iJw@{Iq@eHMeBUuBAg@MoAEm@YkDuAsYg@eLUaGa@mIaA}M{@yKiAuNk@wGKaASoCw@iJ{AcRa@_FEsBAiDVuQ?oAa@_ZAuACiADaABu@As@@AJ?b@I|@WpAStDa@jFm@VGl@M`E{@tBc@ZE?@BB@BFBF?LIBIlAYvCq@TAt@A^BbAPpBJ`@@dAG|@IbE]tB]PMzAWbDm@|E{@TBj@Gd@G|AExAB`C@pBExBGdD_@xBKhReA`Ie@Z@`@FNHRXNVLjBv@lJx@zLX`D\\bF",
+    "status": {
+      "geocoding": "success",
+      "directions": "success"
+    }
+  },
+  {
+    "section_name": "Пътен възел Пловдив Изток – Пютен възел Белозем",
+    "length_km": 25,
+    "start_point": "От пътен възел Пловдив Изток",
+    "end_point": "До пютен възел Белозем",
+    "start_coordinates": {
+      "lat": 42.134514,
+      "lng": 24.750652
+    },
+    "end_coordinates": {
+      "lat": 42.2018642,
+      "lng": 25.0493269
+    },
+    "verification": {
+      "expected_distance_km": 25,
+      "actual_distance_km": 35.536,
+      "distance_verified": false
+    },
+    "route_geometry": "qkd`GabavC^Of@}CTgAb@uAP{@@GPW\\[`@Y\\O~@o@\\Sb@Mp@uBv@gCf@_BXu@Zm@NMVK|@SL?PBRNHLHf@El@ILm@d@_@?}@EgASeA]]WsAeAe@g@kAoBi@_B_BkH}AyIuAaI_@_BeAiFs@iD}AuGyBwIcDoMiJ__@yJi_@sCyJyBmIWsA]aBmAuDBE@E@G?UCQIOMIOAMBKJGPAFAH_Ad@eBzAsBvAsClBcBlBOTaAfBoApC_DlHy@fBcAdBw@r@LyIV{JBmEvAgl@|@_a@vAcl@@cB@mCAmCIoCMoBBsBJq@Rc@ZQ\\AZDj@h@H\\D^DrABjCCrAqCq@eBc@gEkAgI}B_@KSC{Cy@yKqCgHgB_Ba@wDqA{CgA{B_AoHyDy[kQ}WaOoSeLGO{D{BuAs@cAs@_EmCeBcAmEmC[MmAs@_Ac@gBk@{@Q}@M_@A}@Am@?}@HyARwBl@qHjCgOnFiItCcDfAyCnAeBt@sAn@aDlBkCbB}G~EiBnA}@n@wKtHyGvE_D|B}DlCcD|B{B`B_E~C}AnAy@r@c@`@mBzAgAl@cAX]Dg@Dq@?{@GaAQ{Ai@iAa@mBk@iDmAcAa@OKyCcAqBq@oJkD{Ak@}Aa@QSKG{@]]Uw@u@_@s@c@}Au@{Ci@aA_AeAwAqAs@oAYmAM{@G_AIiAAUUoEI{@Ka@QeDiAiUeAoSgAmToDmq@kFubAwAqZy@uUScFWiKMcEYmMU}OSiQUuXyAapAM{L?{NRsVf@wQZ{Hx@oOVkEnAwP`A}Q^mNXuJHeHBqG?eGE}KKyKi@cT[}LOcMEgF@oPPwQPkITsH`A{Wl@wPdEwiAhCas@p@cVTqMPkTBuH?cUQ{TM}J[uNw@wWm@wNeAgR_H_bAgBaWsDmh@OaCDKY{GF}@Ro@RUTOf@G`@LXXb@r@^x@LSjBgC`AsArFyH|Ti[|Q}VvOkTtC_EzGgJHSCiLAiYAsNAcFCaCfBc@t@WJIJQ",
+    "status": {
+      "geocoding": "success",
+      "directions": "success"
+    }
+  },
+  {
+    "section_name": "Пютен възел Оризово – Пютен възел Чирпан",
+    "length_km": 9,
+    "start_point": "От пютен възел Оризово",
+    "end_point": "До пютен възел Чирпан",
+    "start_coordinates": {
+      "lat": 42.2098063,
+      "lng": 25.1652156
+    },
+    "end_coordinates": {
+      "lat": 42.2020702,
+      "lng": 25.3248541
+    },
+    "verification": {
+      "expected_distance_km": 9,
+      "actual_distance_km": 15.025,
+      "distance_verified": false
+    },
+    "route_geometry": "cbs`GwarxCCODiCA[D]BWLcDB{HDkARy@d@u@^c@f@a@TYpAU|AU|Eq@lJ}A~DaAtA[NUDUC}@i@yFmCuZG_A@UBWH[Rc@h@s@fCcDfCsDbA{A`HaK|EkHtGwJnMcRjAeBpAmBt@sAl@aBl@}BbAkHh@yDPs@v@aBh@s@p@o@j@[VIhAW~@SvBYXZFL@P@XE\\IXMRUPWDYCWOOUOm@COFsK@}@L}ZCwWMiZ_@mYKaGs@uYG{Ba@cMe@uLM}C[iHy@cQcA_R_@oHgBe_@kBq^SaDUyFSyDY{GcAmRKaCk@iKgAcRu@wI_C{YgBcRkCoVU}AmAmJs@sF}Ec]oBkMg@_D}BiM_AaFoC}MyBeKoD{OeEcQkDwMCs@G_@IkBHuED_BCw@DkDKy@K]Ma@k@q@kCiBnBwHt@{BnAuCfAsBr@{@tAuAQy@?aADi@JeB?}AEcAQuGCyBF_B^yBrBqJtBoJhCsLjBeI`BkFjAqDB_@Ak@WiBe@wBM{@^A",
+    "status": {
+      "geocoding": "success",
+      "directions": "success"
+    }
+  },
+  {
+    "section_name": "Пютен възел Чирпан – Първия разклон за Стара Загора",
+    "length_km": 9,
+    "start_point": "От пютен възел Чирпан",
+    "end_point": "До първия разклон за Стара Загора",
+    "start_coordinates": {
+      "lat": 42.2020702,
+      "lng": 25.3248541
+    },
+    "end_coordinates": {
+      "lat": 42.4257769,
+      "lng": 25.6344644
+    },
+    "verification": {
+      "expected_distance_km": 9,
+      "actual_distance_km": 45.275,
+      "distance_verified": false
+    },
+    "route_geometry": "}qq`GehqyC|DKbAIfB@`AJv@Kz@YnCgARCGkC?}@PuEl@aPE]o@cHcAsIi@gCoBuHoB{HaFyRaHsW}DiN_@gBaBcGgGoUsEwPcBsHaAoDaC{JO}@o@sHm@sEm@uBYo@[s@a@u@Wa@mB{B}B_CqJgJoCoCyCsCm@y@k@q@y@yAeEoKSg@iHiRgAwDaDyXu@mHq@yCw@yBe@_A_AuA_AyAmAqAQ[oCqCMIkFcG_EwEaOcQgEyEgDgEi@}@c@cA}A_FgAgD{@sBq@kAo@_Ac@g@k@c@cAq@y@c@cA[s@KcBOy@A}@FoDn@}Ev@m@?mBO{A]s@YcBcA_Au@}@cAiGgJuR}YaEkGsHgLyHkLeCsD[]}@w@mAu@aBo@c@KwA]wCe@R}DCg@Oq@[e@e@YiAg@w@a@{@}@_@o@]eASy@KO}BiOe@{B_CkKc@aB]mAe@_B{BuGiBeEiF_KiDmFyAoBeGgH}IsJiMiNqOqPcBiB_AaA[]{UsWyKuLoCaDyFiHqHaK}CuEgGsJqE}HaCwD_EcGwJ}M{C{DeHiIkGuGeCgCsOeOgFkF}EwFcEcGgBuCgAmBoCoFgBeEaBiEmBwFeA}DkCiL[iBy@}Es@kFUaBqI{n@wJss@sCeTcC{PgAqGuCuNkAiFqCiKiBeGmB{F{G_R{HkTeB}EaG_R}BsHgJm\\e@oB}AsGgAuEmCwLqCqM_BkIoD_SqCkQ_EuYmCkUqAyMk@aGk@{FoCq`@gAqS}@oSa@oI_@mI_By^aA}SiDwv@kC{l@{@wSmAySi@sH}@wL{A}PuB_SeBaOaDaUmAsI_FmYcGe[}Iqa@_c@erBaBkIyA{HgDkRy@sFQkA?WKcACgAJw@Re@T]\\Wl@Gb@DZLb@f@Rn@F^?fAQx@Q\\SR]Ts@VOHe@J}@PwBb@wVpEoFbAoFnAq@TkCf@_Et@{BXaF`A_B^{a@xHoB^aBRqB\\uDt@MH_AN}Bd@SAkB\\_Er@yA^_APqRlDgLvBgKtBqi@rJcYjFoDp@kGtAcB`@_E|@mBZiGnAaKxBkEfAqKbCiQ`EkCz@q@`@i@N_Dn@qAXoFnAaDv@]Hq@NKCU?SGACKKKAKDIX?FiD~@}GxAwBd@oGfBeEfBqAn@gLrEkDtAiFjAgCl@}Bh@oNvCcDr@gMnCkDr@_Cn@kI~BkHpBaHhB}LdCiQxDgOxCmFjAB\\pA[`Ey@hNyCzD{@",
+    "status": {
+      "geocoding": "success",
+      "directions": "success"
+    }
+  },
+  {
+    "section_name": "Пютен възел Стара Загора – Пютен възел Нова Загора",
+    "length_km": 30,
+    "start_point": "От пютен възел Стара Загора",
+    "end_point": "До пютен възел Нова Загора",
+    "start_coordinates": {
+      "lat": 42.4257769,
+      "lng": 25.6344644
+    },
+    "end_coordinates": {
+      "lat": 42.4936347,
+      "lng": 26.0085439
+    },
+    "verification": {
+      "expected_distance_km": 30,
+      "actual_distance_km": 33.411,
+      "distance_verified": true
+    },
+    "route_geometry": "ch}aGmvm{CdCg@rB_@lBe@jDs@fDw@~@Uh@M@BZf@LVXZRHT?NGn@GFDP@PINW@]IWIiAOkAA_ABEDK@MEYOQWiCi@cE[qB{AmHgBcI[eAeBiEmBsDaAwAo@u@gAeAqAeA}B{AmBuAcAgAg@o@o@eA?Au@yAaA}CES_@eBUiCYsP_@yYOmCKqAmAaHYsBy@oE{@oF_AoFa@eEGmC@_A@m@\\yDrAmPl@mHVgEDoB@yBGyCEy@KsAg@mDu@iDw@iCsAsDqAcEq@wBS}@{@gFeAsGDG@SGQGCCAc@_CqIci@oBkMqDqTsG{`@aSonAaEuV_Hmc@eCePwByMgHqd@{AqJ{@wFw@wEcA}FMg@y@_FyEyZcQqhAyFy^yA}JuIaj@Ee@y@mFiAcHIUk@mDuLsu@{QalAgGo`@gG_a@iJim@iHkf@oBuM}@_HgBiL_G}a@sGmf@kEg\\wG}g@aCoQkJit@OiAKiAi@}DU}AOaBG]GQCm@Ek@IaD@mDGkGG}JSc[AyAOsTYo]SuSOwBMkAcDkTaKwq@{Hsh@oIkk@_DyTo@uEgBeNiEuZaDmUgE{ZeFq^]_CiEs[{@mGeCkRkFgb@_Gqe@qSkaBuE}^c@wDQoCwAw^m@wOc@aLC_AWsIK_F?oFBcI@iAHk@Jg@L]j@kAbAa@~RiIfDqAdAc@VYd@q@rE}IZq@m@oEcAsHkAkIc@}CIi@m@VGESFaDfA",
+    "status": {
+      "geocoding": "success",
+      "directions": "success"
+    }
+  },
+  {
+    "section_name": "Пютен възел Нова Загора – Пютен възел Сливен",
+    "length_km": 36,
+    "start_point": "От пютен възел Нова Загора",
+    "end_point": "До пютен възел Сливен",
+    "start_coordinates": {
+      "lat": 42.4936347,
+      "lng": 26.0085439
+    },
+    "end_coordinates": {
+      "lat": 42.6816536,
+      "lng": 26.3228685
+    },
+    "verification": {
+      "expected_distance_km": 36,
+      "actual_distance_km": 38.072,
+      "distance_verified": true
+    },
+    "route_geometry": "epjbGkxv}CQJg@n@Y^GCcAk@qC{AQIOG_A@wBFs@La@?m@GgCs@eImBkA_@cCg@?KAMEMIIMAEBy@wF}Q_nAGw@i@iD_@{A[aAu@kBe@eAoHwQcQmb@sMw[sFuMkFsMqCyGkIcS}IwTwH_RuGmP{EwLq\\cz@cKeWq@eB}BaGa@}@wDgJyFwNgJ_Uy^_~@m@eBe@}BSsAMcBGmAAmA?eBCeBCmBSqA[oAUo@gAeC}AkDMc@Ou@K}@SuDSmDO_A_@_Bi@uAg@{@eD_EaBoBOUwAsBo@qA}AiEyAkE}D_LsAwDkAiC}@qAw@u@a@a@oBmAoGmDcCeBq@o@i@s@gAiBaAeCg@qBy@mGOwAe@{DKm@YyA{@gD}CwKuGoU}AsFe@oBWeBUgCOoCwA}YiAgTMeCQeHEuDBgCTaHPeI@oB?yBEoEEgCEaAM}AOm@K[Q[YUc@We@Mg@Gc@Ba@H_Ab@qBjByB~B_CxB]\\{@x@eCnCoKjKm@j@cAx@YR_A^mAV]Bu@As@KyAc@{A{@{EaDuGsEIG}D_EwGeHsMkNeCkCmG}GaCkCmLcMg@i@s@}@We@e@{@}BiGoCwHiPod@eHsRwVir@{@}Bm@cBeAaDQs@m@sCgDmT?SYiBwAmJSu@c@uBUs@{CmGuEeJ_GcMuCqFgEsIwIgQOe@mEyJW]_AiCcAwCyGqR_GyP{J}XcCaH{@yB{@oBs@oAwCaGeHoNWi@g@qAoAcF_D{MeBoHsBmJy@mDkAeFGi@yBeK{BeK}ByJ]aBm@cEKc@mA{LUeDCaA@iAl@cPdA_Z|@uTb@cKF_C?gBGgBKgAg@wFmBqUaBkRg@}CQs@]y@oCiGiC{FaDiHiA_CqEaKq@mBe@sB}B{LsAmHWmA{@{Dq@{BuA_DkB}C_Ywa@{GwJcCuD}LoQ_OqTsBuCwCgEkAqBGIMUmBsCsC_EaDyEeD}EwDaF{F{I{DyFmGiJkBoCcDeFoC{D{GyJ_LmPmDaFuDwFiBmCeCmDcCsDUYEU}BgDcBeC_CwDy@kACKIKKCIBkAs@c@W{@YkM{BiBYcE_@mCI_EJ_Kf@}A@{@Um@Ys@c@_@o@QwDe@{GUaA_@gAq@uAyByDmBoD}@gBs@cCwA~@}C|BqIjGaH|EKa@A@GFCBUCeM_CaCk@o@?YF{@^WReDjDiGzFg@LoAByE?CCIEICIAE?IRK`@CPAFyFKmIGQ?eRCAvArDD`HD@`DZzFTnC",
+    "status": {
+      "geocoding": "success",
+      "directions": "success"
+    }
+  },
+  {
+    "section_name": "Пютен възел Сливен – Пютен възел Зимница",
+    "length_km": 13,
+    "start_point": "От пютен възел Сливен",
+    "end_point": "До пютен възел Зимница",
+    "start_coordinates": {
+      "lat": 42.6816536,
+      "lng": 26.3228685
+    },
+    "end_coordinates": {
+      "lat": 42.5824594,
+      "lng": 26.6017167
+    },
+    "verification": {
+      "expected_distance_km": 13,
+      "actual_distance_km": 30.641,
+      "distance_verified": false
+    },
+    "route_geometry": "agocGaet_DUoC[{FAaDdI@tBBhBHxDCBJFHJDL?LGRe@Lq@@s@G_@IGIC\\_AfBcCT[F[p@cAvByCxBqCd@iAv@gDtE}UDQNWd@aDJuA@q@?e@G}LA_A@ADCBCDM@OCKGKECB}LXypAFaZCkEGeDM_GGqEGcEIm@KgH_@eT?mABcB@s@TeCj@kEjBmMfCkQlAsINWlAiHn@kE@UfAqG~N{|@bDwRfBoKLWnB{LAQZkB|BaNrAcFjAiD|DqKz@iCl@kCXkBNqBj@iKZyGvAw[lBo`@ZyEHa@Re@NSb@[~@UV?JCDDDDJ@JCHKDOAQEMKIk@cIEYKaEG_D?{CPyLDkAl@sOj@sLfBy^fFueAPwC^aF\\uBf@mCDKxCwOjCoNz@_FhAaGpAmHDc@z@iElBeKXyAHOf@}BnA_HBg@fDqQdPe{@jLin@rEsVzM_t@bCoMl@aELmBD_CG{LIiRIuNKkTIoOC{CCsDWwIEeHEeHAeIBuIDyE@mGGsEG_BEeHYcg@I_T]is@CiGFaCFcAVyBL_AHSXW\\@n@E~EeClBaAdUyLtOcIvIwE`FqCv@i@nFaD|@_@VGv@OlCB`GRnHPtJYpDKd@Id@Q~EwBpB{@fEuBta@kTv_@cSx^kRnRyJlRaKl@a@d@c@VYx@qAd@y@|HgNdDcGjEgH~PiZzD{GrGyKdDgGNe@Ji@@m@SoHMyDUcGm@oQBsAaBkBwGsHwB_Ck@y@Mg@?o@DeABk@`ANjFl@|C`@xHz@zLvA|E|@dAPE|@CZU`@aC|H{BdIy@tCIl@VNxAl@jFxBnItDd@TXo@",
+    "status": {
+      "geocoding": "success",
+      "directions": "success"
+    }
+  },
+  {
+    "section_name": "Пютен възел Карнобат – Пютен възел Българово",
+    "length_km": 26,
+    "start_point": "От пютен възел Карнобат",
+    "end_point": "До пютен възел Българово",
+    "start_coordinates": {
+      "lat": 42.6511052,
+      "lng": 26.9803527
+    },
+    "end_coordinates": {
+      "lat": 42.6219466,
+      "lng": 27.3064912
+    },
+    "verification": {
+      "expected_distance_km": 26,
+      "actual_distance_km": 37.172,
+      "distance_verified": false
+    },
+    "route_geometry": "ohicGertcD?JhDyAlFcCbEiBt@c@dAa@PA~AXtARfCPhAa@bD_AnC}@fApBT`@JId@a@d@UbA[`CWp@ElAOPSVe@h@mAV_@tAyAnDgDnD}CpDwCNQh@eAp@cBVs@b@y@|@cAtHeEd@Ox@OpCOjK_@vEUj@Gn@]bD{BnL}I|@q@hHgFxAm@j@Iv@E~@B|E\\nA@~@EvAU|A]nJsCvGuBfBk@nBk@r@Cz@@`@FXHp@`@j@j@Zh@PVLh@|@hEnAnFb@bAX`@zCdCbAz@v@n@fAlAdJnMf@z@Th@^nAn@dEl@xDf@hBt@~Av@rAnAmAr@o@|@[hAYl@KbCW`C?`EFfJJvSVrGHvKNfADfBNhC\\tKxAvGv@tAP`@Dt@@lAE`@CrASrA[rAa@A_ACMMm@i@kAeAmBkA}BYgAG]IsAA{A@aBIO@}D@_BFgHJkSf@kZHqCpAsa@v@iW\\qNB_DRcOLuR@_KGkTQ_RaAcs@kBwuAWySK_OEiG@qRFqKRqONqJb@gQp@iS^{It@qNf@aI`AyNr@kJ|Cmb@ToEx@sOj@qOVuLJiNBsFBuI?_B?oMCaJIgJSyVAaBCuD?yID_KLgKF_DRoHVyELmE^{HtBsa@N_DH{CBqGCsBOqGW_EYgD}@qHi@cDu@sDeAeEq@_CoBwFuCwGgEsIsBaEuBcEgEmIwDmHwBwEaAcC_B{Em@uBoAiFk@uCm@sDu@mGQqBW}DQgFE}GHiFRmGDcAh@aHLmAn@iFx@qEd@oBnAuEhAkDzA}DjJgTh@qA|E}Lv@}Bz@iCnAoEvAqFtAiG|@yEjAcHb@sCp@oFFo@l@kFj@_HRmCDq@NaCT_GJsCLcGD}KB}H?y@DgY@sF?oPKiL[wKg@{K{@_MaA_LmAmKk@gE{BmN_CiLcEgRqHe]qYorAgIi_@cEsRgDcOcBcIi@uCwC_Py@iF_AsG{B{PuBsRsA_OaA}Lg@eIs@}M_@wIE}ACq@YaLQoMKiLAuHF}QBiGT{\\D}GFMBuCBw@FWNQVCPBTTT`@@z@Az@sAYMCQCy@MyDs@eCe@{AUsB]oC]c@GuEi@iIeAoO{AsGo@k@EuAMc@GgF_@}C[aBMuFKe@?YGsAm@sAm@OEmAKiEM",
+    "status": {
+      "geocoding": "success",
+      "directions": "success"
+    }
+  },
+  {
+    "section_name": "Пютен възел Българово – Разклон за Айтос",
+    "length_km": 30,
+    "start_point": "От пютен възел Българово",
+    "end_point": "До разклона за Айтос",
+    "start_coordinates": {
+      "lat": 42.6219466,
+      "lng": 27.3064912
+    },
+    "end_coordinates": {
+      "lat": 42.7031175,
+      "lng": 27.250644
+    },
+    "verification": {
+      "expected_distance_km": 30,
+      "actual_distance_km": 16.06,
+      "distance_verified": false
+    },
+    "route_geometry": "erccGuhteDQ?WoJOsDKeD@k@ZaCX{GRaI@_B?{BBaA`@kEfA{Kn@iEDo@?_AG}@wAsLMwAGaBKmGGk@yA}ISkAMaAkAkMKoAEoAIgNWm_@IkKEqCI_A_@iDmBkPScDQiDEYWe@gArA_AfAoAdAuBpAoAh@qFhBeWbIcBh@gPbFs@Ra@Fs@RkDnAsChAqAv@eBtA}A~AsF~GgArAgDrD{EzEmAnAqDvD{AdBcBpBqBlCY`@mAbB}I|LcFhGoDdEqHtIk@p@aCtCgCnDeCnDiCdEcElHiErHKJc@r@uAbCs@lAaD|FEPmFlJsBzDqBdEaJ`SqBpD}BxD_Yp`@kG|IcI`LqJdN_NpR_[`d@op@h`AsAfBwNlQ}EtGc@n@mAlBuGxJmGpJcClDuC|DiAbBsAtB]t@Wt@Qv@s@xDgC~OmAbJwAhMu@`L_@zFk@hJ[bBOZMIOIQAWJILKXAR?JyC?mCAeD?mOC?cDAcBp@AnAMtAQ",
+    "status": {
+      "geocoding": "success",
+      "directions": "success"
+    }
+  },
+  {
+    "section_name": "Разклон за Айтос – Северен обход на Бургас",
+    "length_km": 8,
+    "start_point": "От разклона за Айтос",
+    "end_point": "До новото трасе на Северен обход на Бургас",
+    "start_coordinates": {
+      "lat": 42.7031175,
+      "lng": 27.250644
+    },
+    "end_coordinates": {
+      "lat": 42.5135656,
+      "lng": 27.4855315
+    },
+    "verification": {
+      "expected_distance_km": 8,
+      "actual_distance_km": 31.834,
+      "distance_verified": false
+    },
+    "route_geometry": "omscGokieD}BXyAF@jC?zBbD@xM@hC?rE@DVRb@VTZL\\FLGJOPi@Mi@We@QSN[FYRiA\\oFl@uJt@aLvAiMlAcJfC_Pr@yDPw@Vu@\\u@rAuBhAcBtC}DbCmDlGqJfKwO|EuGvNmQrAgBbN}Rj}@mqA~MqRpJeNbIaLjG}I~Xq`@|ByDpBqDbF{K|BeFpBeErB{DlFmJJIrA}BvCiFbB}CDQhEsHr@mAnC_FhCeEdCoDfCoD`CuCj@q@hCwCvIcKbFiGtEqGtEoGXa@pBmCbBqBzAeBpDwDlAoAzE{EfDsDfAsA`C{CpBcC|A_B|AmAJAvAu@nBw@hBm@rC{@\\[xDkA~LyDvKiDzRmG|Ak@j@YdAq@`Aq@fAgAv@}@t@_Al@aAr@sAbJwRbE}IlS_c@tKkUlJeStCsGxDyIfAoCp@yBb@sBXyAd@sE`@iGz@iNz@iL`@oCj@qBr@gBx@yAXc@V]~@_AnC_CfFqEhCuBZWTURIXQrG{FfC_CHOpAoAxIyHxBoB`B{A~CsCnF_FbAy@|BqBnDyCr@i@fAw@|@i@fA[nAa@lDu@zAe@xC_A`@KPEtA_@v@Wt@a@ROp@o@`@g@Zi@\\y@`@oA^qBn@wC\\cAr@{AjA{AXg@lA_AzCgCbKwIzQqOnFsEz[iXpK_JjLuJ~EcEfGiFpS}PpR}OnPiNfIaHfDmChFmErFqEjTmQrFqEpFuEdJyHbMiK|CiCxCeCtGqF~M_LjB}AvAmA`Aq@\\WvJgI~OwMnMqKvOsMxE}DvC_CtAgAj@_@l@Op@SH@ZOb@_@j@m@`@a@\\Wz@_AxCyCp@k@jG{FfIcH`GyEhDiCtDoCdEsCNKpBsA`@BVEVOLSHSHe@Ng@LSbFsEhE{D|BqBzCkCl@m@tEaE|BkB@K~@y@NYn@aDl@}AXi@pAqAxCwC|IaJ|KsLdEoEfAmAGe@Kq@Ug@g@q@c@i@MKEM]cAmAaC_@e@o@a@q@YWUMUIQIa@GSK}BQaEGuB?[ZaBxBc@EQKMaAg@_DqBe@YeCaBmDyB_FwCc@]{@[kHiAeIqAgB[",
+    "status": {
+      "geocoding": "success",
+      "directions": "success"
+    }
+  }
+]

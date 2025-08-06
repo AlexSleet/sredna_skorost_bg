@@ -1,0 +1,290 @@
+[
+  {
+    "section_name": "Вакарел – Ихтиман",
+    "length_km": 19,
+    "start_point": "Между Вакарел",
+    "end_point": "Ихтиман",
+    "start_coordinates": null,
+    "end_coordinates": null,
+    "verification": {
+      "expected_distance_km": 19,
+      "actual_distance_km": null,
+      "distance_verified": null
+    },
+    "route_geometry": null,
+    "status": {
+      "geocoding": "failed",
+      "directions": "pending"
+    }
+  },
+  {
+    "section_name": "Разклон за Костенец – Разклон за Мухово (вкл. тунел \"Траянови врата\")",
+    "length_km": 23,
+    "start_point": "От разклона за Костенец",
+    "end_point": "До разклона за Мухово",
+    "start_coordinates": null,
+    "end_coordinates": null,
+    "verification": {
+      "expected_distance_km": 23,
+      "actual_distance_km": null,
+      "distance_verified": null
+    },
+    "route_geometry": null,
+    "status": {
+      "geocoding": "failed",
+      "directions": "pending"
+    }
+  },
+  {
+    "section_name": "Разклон за Костенец – Тунел \"Траянови врата\"",
+    "length_km": 9,
+    "start_point": "От разклона за Костенец",
+    "end_point": "До тунел \"Траянови врата\"",
+    "start_coordinates": null,
+    "end_coordinates": null,
+    "verification": {
+      "expected_distance_km": 9,
+      "actual_distance_km": null,
+      "distance_verified": null
+    },
+    "route_geometry": null,
+    "status": {
+      "geocoding": "failed",
+      "directions": "pending"
+    }
+  },
+  {
+    "section_name": "Разклон за Велинград – Разклон за Калугерово",
+    "length_km": 10,
+    "start_point": "От разклона за Велинград",
+    "end_point": "До разклона за Калугерово",
+    "start_coordinates": null,
+    "end_coordinates": null,
+    "verification": {
+      "expected_distance_km": 10,
+      "actual_distance_km": null,
+      "distance_verified": null
+    },
+    "route_geometry": null,
+    "status": {
+      "geocoding": "failed",
+      "directions": "pending"
+    }
+  },
+  {
+    "section_name": "Пътен възел Пазарджик – Пътен възел Цалапица",
+    "length_km": 22,
+    "start_point": "От пътен възел Пазарджик",
+    "end_point": "До пътен възел Цалапица",
+    "start_coordinates": null,
+    "end_coordinates": null,
+    "verification": {
+      "expected_distance_km": 22,
+      "actual_distance_km": null,
+      "distance_verified": null
+    },
+    "route_geometry": null,
+    "status": {
+      "geocoding": "failed",
+      "directions": "pending"
+    }
+  },
+  {
+    "section_name": "Пътен възел Пазарджик – Пътен възел Пловдив Запад",
+    "length_km": 28,
+    "start_point": "От пътен възел Пазарджик",
+    "end_point": "До пътен възел Пловдив Запад",
+    "start_coordinates": null,
+    "end_coordinates": null,
+    "verification": {
+      "expected_distance_km": 28,
+      "actual_distance_km": null,
+      "distance_verified": null
+    },
+    "route_geometry": null,
+    "status": {
+      "geocoding": "failed",
+      "directions": "pending"
+    }
+  },
+  {
+    "section_name": "Пътен възел Пазарджик – Пътен възел Пловдив Север",
+    "length_km": 35,
+    "start_point": "От пътен възел Пазарджик",
+    "end_point": "До пътен възел Пловдив Север",
+    "start_coordinates": null,
+    "end_coordinates": null,
+    "verification": {
+      "expected_distance_km": 35,
+      "actual_distance_km": null,
+      "distance_verified": null
+    },
+    "route_geometry": null,
+    "status": {
+      "geocoding": "failed",
+      "directions": "pending"
+    }
+  },
+  {
+    "section_name": "Пътен възел Пловдив Изток – Пютен възел Белозем",
+    "length_km": 25,
+    "start_point": "От пътен възел Пловдив Изток",
+    "end_point": "До пютен възел Белозем",
+    "start_coordinates": null,
+    "end_coordinates": null,
+    "verification": {
+      "expected_distance_km": 25,
+      "actual_distance_km": null,
+      "distance_verified": null
+    },
+    "route_geometry": null,
+    "status": {
+      "geocoding": "failed",
+      "directions": "pending"
+    }
+  },
+  {
+    "section_name": "Пютен възел Оризово – Пютен възел Чирпан",
+    "length_km": 9,
+    "start_point": "От пютен възел Оризово",
+    "end_point": "До пютен възел Чирпан",
+    "start_coordinates": null,
+    "end_coordinates": null,
+    "verification": {
+      "expected_distance_km": 9,
+      "actual_distance_km": null,
+      "distance_verified": null
+    },
+    "route_geometry": null,
+    "status": {
+      "geocoding": "failed",
+      "directions": "pending"
+    }
+  },
+  {
+    "section_name": "Пютен възел Чирпан – Първия разклон за Стара Загора",
+    "length_km": 9,
+    "start_point": "От пютен възел Чирпан",
+    "end_point": "До първия разклон за Стара Загора",
+    "start_coordinates": null,
+    "end_coordinates": null,
+    "verification": {
+      "expected_distance_km": 9,
+      "actual_distance_km": null,
+      "distance_verified": null
+    },
+    "route_geometry": null,
+    "status": {
+      "geocoding": "failed",
+      "directions": "pending"
+    }
+  },
+  {
+    "section_name": "Пютен възел Стара Загора – Пютен възел Нова Загора",
+    "length_km": 30,
+    "start_point": "От пютен възел Стара Загора",
+    "end_point": "До пютен възел Нова Загора",
+    "start_coordinates": null,
+    "end_coordinates": null,
+    "verification": {
+      "expected_distance_km": 30,
+      "actual_distance_km": null,
+      "distance_verified": null
+    },
+    "route_geometry": null,
+    "status": {
+      "geocoding": "failed",
+      "directions": "pending"
+    }
+  },
+  {
+    "section_name": "Пютен възел Нова Загора – Пютен възел Сливен",
+    "length_km": 36,
+    "start_point": "От пютен възел Нова Загора",
+    "end_point": "До пютен възел Сливен",
+    "start_coordinates": null,
+    "end_coordinates": null,
+    "verification": {
+      "expected_distance_km": 36,
+      "actual_distance_km": null,
+      "distance_verified": null
+    },
+    "route_geometry": null,
+    "status": {
+      "geocoding": "failed",
+      "directions": "pending"
+    }
+  },
+  {
+    "section_name": "Пютен възел Сливен – Пютен възел Зимница",
+    "length_km": 13,
+    "start_point": "От пютен възел Сливен",
+    "end_point": "До пютен възел Зимница",
+    "start_coordinates": null,
+    "end_coordinates": null,
+    "verification": {
+      "expected_distance_km": 13,
+      "actual_distance_km": null,
+      "distance_verified": null
+    },
+    "route_geometry": null,
+    "status": {
+      "geocoding": "failed",
+      "directions": "pending"
+    }
+  },
+  {
+    "section_name": "Пютен възел Карнобат – Пютен възел Българово",
+    "length_km": 26,
+    "start_point": "От пютен възел Карнобат",
+    "end_point": "До пютен възел Българово",
+    "start_coordinates": null,
+    "end_coordinates": null,
+    "verification": {
+      "expected_distance_km": 26,
+      "actual_distance_km": null,
+      "distance_verified": null
+    },
+    "route_geometry": null,
+    "status": {
+      "geocoding": "failed",
+      "directions": "pending"
+    }
+  },
+  {
+    "section_name": "Пютен възел Българово – Разклон за Айтос",
+    "length_km": 30,
+    "start_point": "От пютен възел Българово",
+    "end_point": "До разклона за Айтос",
+    "start_coordinates": null,
+    "end_coordinates": null,
+    "verification": {
+      "expected_distance_km": 30,
+      "actual_distance_km": null,
+      "distance_verified": null
+    },
+    "route_geometry": null,
+    "status": {
+      "geocoding": "failed",
+      "directions": "pending"
+    }
+  },
+  {
+    "section_name": "Разклон за Айтос – Северен обход на Бургас",
+    "length_km": 8,
+    "start_point": "От разклона за Айтос",
+    "end_point": "До новото трасе на Северен обход на Бургас",
+    "start_coordinates": null,
+    "end_coordinates": null,
+    "verification": {
+      "expected_distance_km": 8,
+      "actual_distance_km": null,
+      "distance_verified": null
+    },
+    "route_geometry": null,
+    "status": {
+      "geocoding": "failed",
+      "directions": "pending"
+    }
+  }
+]
