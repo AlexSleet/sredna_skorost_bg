@@ -2,6 +2,9 @@
 """
 Highway Sections Enricher
 Enriches Bulgarian highway sections data with Google Maps API coordinates and distance verification.
+
+Data Source: Average speed zone descriptions from Facebook post:
+https://www.facebook.com/100001126297074/posts/24018681411086067/?mibextid=rS40aB7S9Ucbxw6v
 """
 
 import json
@@ -37,9 +40,12 @@ class HighwaySectionsEnricher:
         self.rate_limit_delay = 0.1  # 100ms between API calls
         
     def geocode_location(self, location: str, region: str = "bg") -> Tuple[Optional[float], Optional[float]]:
-        """Geocode a location string to lat/lng coordinates."""
+        """Geocode a location string to lat/lng coordinates, specifically for A1 Trakia highway."""
+        # Enhance search query to focus on A1 highway locations
+        enhanced_query = f"{location}, A1 Trakia highway, Bulgaria"
+        
         params = {
-            "address": f"{location}, Bulgaria",
+            "address": enhanced_query,
             "region": region,
             "key": self.api_key
         }
@@ -50,7 +56,21 @@ class HighwaySectionsEnricher:
             data = response.json()
             
             if data["status"] == "OK" and data["results"]:
+                # Filter results to prioritize highway-related locations
+                for result in data["results"]:
+                    address = result.get("formatted_address", "").lower()
+                    types = result.get("types", [])
+                    
+                    # Prioritize results that mention highway or are route-related
+                    if any(keyword in address for keyword in ["highway", "trakia", "a1", "interchange", "exit"]) or \
+                       any(route_type in types for route_type in ["route", "establishment"]):
+                        location_data = result["geometry"]["location"]
+                        print(f"  → Found highway location: {result['formatted_address']}")
+                        return location_data["lat"], location_data["lng"]
+                
+                # Fallback to first result if no highway-specific match
                 location_data = data["results"][0]["geometry"]["location"]
+                print(f"  → Using fallback location: {data['results'][0]['formatted_address']}")
                 return location_data["lat"], location_data["lng"]
             else:
                 print(f"Geocoding failed for '{location}': {data.get('status', 'Unknown error')}")
@@ -62,11 +82,13 @@ class HighwaySectionsEnricher:
     
     def get_directions(self, start_lat: float, start_lng: float, 
                       end_lat: float, end_lng: float) -> Dict:
-        """Get directions between two lat/lng points."""
+        """Get directions between two lat/lng points, staying on A1 Trakia highway."""
         params = {
             "origin": f"{start_lat},{start_lng}",
             "destination": f"{end_lat},{end_lng}",
             "region": "bg",
+            "avoid": "tolls",  # This often helps stay on main highways
+            "waypoints": "",   # Could add waypoints to force highway routing
             "key": self.api_key
         }
         
