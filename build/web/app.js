@@ -23,60 +23,60 @@ const HIGHWAY_SEGMENTS_CONFIG = [
         color: '#FF6B6B'
     },
     {
-        id: 'ihtiman-trayanov-vrata',
+        id: 'ihtiman-trayanovi',
         name: 'Ихтиман - Траянови врата',
         maxSpeed: 140, 
         startPoint: { lat: 42.4270833, lng: 23.8543333, name: 'Ихтиман' },
-        endPoint: { lat: 42.3530000, lng: 23.9227500, name: 'Траянови врата' },
-        color: '#4ECDC4'
+        endPoint: { lat: 42.3570556, lng: 23.9928056, name: 'Траянови врата' },
+        color: '#FF9800'
     },
     {
-        id: 'trayanov-vrata-dinkaya',
+        id: 'trayanovi-dinkato',
         name: 'Траянови врата - Динката',
         maxSpeed: 140,
-        startPoint: { lat: 42.3530000, lng: 23.9227500, name: 'Траянови врата' },
-        endPoint: { lat: 42.2580213, lng: 24.2742827, name: 'Динката' },
-        color: '#95E1D3'
+        startPoint: { lat: 42.3570556, lng: 23.9928056, name: 'Траянови врата' },
+        endPoint: { lat: 42.2775278, lng: 24.1591944, name: 'Динката' },
+        color: '#FFEB3B'
     },
     {
-        id: 'dinkaya-tsalapitsa',
-        name: 'Динkata - Цалапица',
+        id: 'dinkato-tsalapitsa',
+        name: 'Динката - Цалапица',
         maxSpeed: 140,
-        startPoint: { lat: 42.2580213, lng: 24.2742827, name: 'Динката' },
-        endPoint: { lat: 42.2049167, lng: 24.5083889, name: 'Цалапица' },
-        color: '#1976D2'
+        startPoint: { lat: 42.2775278, lng: 24.1591944, name: 'Динката' },
+        endPoint: { lat: 42.2202222, lng: 24.3344722, name: 'Цалапица' },
+        color: '#4CAF50'
     },
     {
         id: 'tsalapitsa-radinovo',
         name: 'Цалапица - Радиново',
         maxSpeed: 140,
-        startPoint: { lat: 42.2049167, lng: 24.5083889, name: 'Цалапица' },
-        endPoint: { lat: 42.1983056, lng: 24.6403056, name: 'Радиново' },
-        color: '#FF9800'
+        startPoint: { lat: 42.2202222, lng: 24.3344722, name: 'Цалапица' },
+        endPoint: { lat: 42.1833056, lng: 24.4502778, name: 'Радиново' },
+        color: '#2196F3'
     },
     {
         id: 'radinovo-tsaratsovo',
         name: 'Радиново - Царацово',
         maxSpeed: 140,
-        startPoint: { lat: 42.1983056, lng: 24.6403056, name: 'Радиново' },
-        endPoint: { lat: 42.2075000, lng: 24.6877222, name: 'Царацово' },
-        color: '#9C27B0'
+        startPoint: { lat: 42.1833056, lng: 24.4502778, name: 'Радиново' },
+        endPoint: { lat: 42.1616389, lng: 24.5827222, name: 'Царацово' },
+        color: '#3F51B5'
     },
     {
         id: 'tsaratsovo-voyvodinovo',
         name: 'Царацово - Войводиново',
         maxSpeed: 140,
-        startPoint: { lat: 42.2075000, lng: 24.6877222, name: 'Царацово' },
-        endPoint: { lat: 42.2105000, lng: 24.7821111, name: 'Войводиново' },
-        color: '#607D8B'
+        startPoint: { lat: 42.1616389, lng: 24.5827222, name: 'Царацово' },
+        endPoint: { lat: 42.1422222, lng: 24.7119444, name: 'Войводиново' },
+        color: '#9C27B0'
     },
     {
         id: 'voyvodinovo-trilistnik',
         name: 'Войводиново - Трилистник',
         maxSpeed: 140,
-        startPoint: { lat: 42.2105000, lng: 24.7821111, name: 'Войводиново' },
-        endPoint: { lat: 42.2169167, lng: 24.8598889, name: 'Трилистник' },
-        color: '#795548'
+        startPoint: { lat: 42.1422222, lng: 24.7119444, name: 'Войводиново' },
+        endPoint: { lat: 42.1503056, lng: 24.7503056, name: 'Трилистник' },
+        color: '#E91E63'
     }
 ];
 
