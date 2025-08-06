@@ -1,473 +1,264 @@
-# Sredna Skorost BG (Средна Скорост БГ)
+# Web Version - Sredna Skorost BG
 
-A Flutter-based mobile application for monitoring average speed on Bulgarian highways, specifically designed for the A1/E80 Sofia-Plovdiv highway sections. This app helps drivers maintain legal average speeds within monitored highway segments to avoid speed camera violations.
+This is the original web-based prototype of the Sredna Skorost BG highway speed monitoring application. It was the initial proof-of-concept that later evolved into the full Flutter mobile app.
 
-## 🇧🇬 About
+## 🌐 Overview
 
-**Sredna Skorost BG** is an open-source speed monitoring application that tracks your average speed within specific highway segments on Bulgaria's A1/E80 highway between Sofia and Plovdiv. The app uses precise GPS coordinates collected through field research to provide accurate zone detection and bidirectional monitoring.
+The web version provides a browser-based speed monitoring interface that can be accessed from any device with GPS capabilities. It uses JavaScript for real-time GPS tracking and includes all the core speed monitoring algorithms.
 
-## 📱 Available Versions
+## 📁 File Structure
 
-This project includes two implementations:
-
-### 🚀 **Flutter Mobile App** (Recommended)
-- **Native iOS/Android performance** with optimized battery usage
-- **Cross-platform support**: Works on iPhone, iPad, and Android devices
-- **Offline maps** and full functionality without internet
-- **Advanced features**: CarPlay support (iOS), session persistence, auto-pause/resume
-- **Production-ready** with comprehensive testing
-
-### 🌐 **Web Version** (Prototype)
-- **Universal browser access** - works on any device
-- **Original proof-of-concept** that evolved into the mobile app
-- **Development and testing** purposes
-- **Cross-platform compatibility** for quick demonstrations
-
-> **📁 Web Version**: See the [`web/`](web/) directory and its [README](web/README.md) for setup instructions.
-
-### Key Features
-
-- **Real-time GPS tracking** with offline map support
-- **Bidirectional zone detection** using movement vector analysis
-- **Automatic start/stop detection** based on speed patterns
-- **Session persistence** that survives app restarts
-- **Auto-guidance system** with recommended speed calculations
-- **Speed violation warnings** with predictive analysis
-- **Historical session tracking** and statistics
-- **Offline operation** - no internet connection required
-
-## 📸 Screenshots
-
-<div align="center">
-
-### Flutter Mobile App Interface
-
-| Session History | Session History | Zone Detection | Speed Monitoring | Main Screen |
-|:---:|:---:|:---:|:---:|:---:|
-| <img src="https://github.com/user-attachments/assets/dac54538-09c9-4412-be14-9539f4be5250" width="200" alt="Session History"> | <img src="https://github.com/user-attachments/assets/8a564c3b-3f61-425e-9218-7b0509cf88a1" width="200" alt="Session History"> | <img src="https://github.com/user-attachments/assets/dc70a479-bb18-435e-a2cd-d6f728232c8d" width="200" alt="Zone Detection"> | <img src="https://github.com/user-attachments/assets/9ead70b7-1557-4f51-af87-8b5220f7f873" width="200" alt="Speed Monitoring"> | <img src="https://github.com/user-attachments/assets/3ec0982a-2ce7-40b7-a01e-2effd255284d" width="200" alt="Main Screen"> |
-| *Historical session tracking* | *Past trip compliance data* | *Automatic zone entry detection* | *Real-time speed calculation* | *Offline maps with GPS tracking* |
-
-</div>
-
-## 🛣️ Highway Segments
-
-The application monitors **8 primary highway segments** and **2 test sections** on the A1/E80:
-
-### Primary Segments (140 km/h limit):
-1. **Вакарел → Ихтиман** (42.5505833°N, 23.7028611°E → 42.4270833°N, 23.8543333°E)
-2. **Ихтиман → Траянови врата** (42.4270833°N, 23.8543333°E → 42.3675°N, 23.9569167°E)
-3. **Траянови врата → Белозем** (42.3675°N, 23.9569167°E → 42.3258333°N, 24.0544444°E)
-4. **Белозем → Капитан Димитриево** (42.3258333°N, 24.0544444°E → 42.2977778°N, 24.1488889°E)
-5. **Капитан Димитриево → Динката** (42.2977778°N, 24.1488889°E → 42.2775278°N, 24.1591944°E)
-6. **Динката → Цалапица** (42.2775278°N, 24.1591944°E → 42.2202222°N, 24.3344722°E)
-7. **Цалапица → Радиново** (42.2202222°N, 24.3344722°E → 42.1894444°N, 24.4458333°E)
-8. **Радиново → Трилистник** (42.1894444°N, 24.4458333°E → 42.1630556°N, 24.5275°E)
-
-### Test Segments (25 km/h limit for testing):
-- **Test Section 1**: Near Sofia (42.6977°N, 23.3219°E → 42.6977°N, 23.3419°E)
-- **Test Section 2**: Near Plovdiv (42.1354°N, 24.7453°E → 42.1354°N, 24.7653°E)
-
-## 🔬 Technical Implementation
-
-### GPS Coordinate Collection Methodology
-
-All GPS coordinates were manually collected through **field research**:
-
-1. **Physical Travel**: Multiple round trips between Sofia and Plovdiv
-2. **Manual Pinning**: Each segment start/end point was physically visited and marked using Google Maps
-3. **Toll Camera Integration**: Speed camera locations were cross-referenced with Waze community data
-4. **Precision Verification**: Coordinates verified through multiple passes and GPS averaging
-5. **Direction Testing**: Bidirectional accuracy confirmed through travel in both directions
-
-### Zone Detection Algorithm
-
-The app uses a sophisticated **bidirectional detection system**:
-
-```dart
-String _determineDirection(LatLng currentPos, LatLng segmentStart, LatLng segmentEnd) {
-  // Calculate movement vector
-  double bearing = Geolocator.bearingBetween(
-    _previousPosition!.latitude, 
-    _previousPosition!.longitude,
-    currentPos.latitude, 
-    currentPos.longitude
-  );
-  
-  // Calculate segment vector  
-  double segmentBearing = Geolocator.bearingBetween(
-    segmentStart.latitude, 
-    segmentStart.longitude,
-    segmentEnd.latitude, 
-    segmentEnd.longitude
-  );
-  
-  // Determine direction based on bearing difference
-  double bearingDiff = (bearing - segmentBearing).abs();
-  if (bearingDiff > 180) bearingDiff = 360 - bearingDiff;
-  
-  return bearingDiff < 90 
-    ? '${segment.startName} → ${segment.endName}'
-    : '${segment.endName} → ${segment.startName}';
-}
+```
+web/
+├── index.html              # Main application interface
+├── working_index.html      # Stable backup version
+├── debug.html             # Debug version with console output
+├── app.js                 # Core JavaScript application logic
+├── styles.css             # Application styling
+├── server.py              # Python development server
+├── https_server.py        # HTTPS server for GPS access
+├── simple_https_server.py # Simplified HTTPS server
+├── start_server.py        # Server startup script
+├── test_server.py         # Server testing utilities
+├── server.cert           # SSL certificate for HTTPS
+├── server.crt            # SSL certificate file
+├── server.key            # SSL private key
+├── qr.html               # QR code for easy mobile access
+├── qr-https.html         # QR code for HTTPS version
+├── test-location.html    # GPS testing page
+├── README_HIGHWAY_SECTIONS.md # Highway segments documentation
+└── venv/                 # Python virtual environment
 ```
 
-### Speed Calculation Formulas
-
-#### Average Speed Calculation
-```dart
-double averageSpeed = totalDistance / totalTimeInHours;
-```
-
-Where:
-- `totalDistance`: Accumulated distance using Haversine formula
-- `totalTimeInHours`: Active tracking time (excluding pauses)
-
-#### Distance Calculation (Haversine Formula)
-```dart
-double calculateDistance(LatLng pos1, LatLng pos2) {
-  return Geolocator.distanceBetween(
-    pos1.latitude, pos1.longitude,
-    pos2.latitude, pos2.longitude
-  ) / 1000.0; // Convert to kilometers
-}
-```
-
-#### Recommended Speed Calculation
-```dart
-double calculateRecommendedSpeed(double currentAvg, double remaining, double timeLeft) {
-  double targetAverage = speedLimit - 2; // 2 km/h buffer
-  double requiredSpeed = (targetAverage * totalTime - currentAvg * elapsedTime) / timeLeft;
-  return math.max(0, math.min(speedLimit + 20, requiredSpeed));
-}
-```
-
-### Auto-Detection Features
-
-#### Stop Detection Algorithm
-```dart
-void _autoDetectStopResume(double currentSpeed) {
-  const double stopThreshold = 5.0; // km/h
-  const double resumeThreshold = 15.0; // km/h
-  
-  if (currentSpeed < stopThreshold) {
-    _lowSpeedCount++;
-    if (_lowSpeedCount > 6 && !_stopDetected) { // 6 consecutive readings
-      _triggerStopTimer();
-    }
-  } else if (currentSpeed > resumeThreshold && _stopDetected) {
-    _triggerResumeCountdown();
-  }
-}
-```
-
-#### Zone Entry/Exit Detection
-```dart
-bool _isInZone(LatLng position, HighwaySegment segment) {
-  double distanceToStart = Geolocator.distanceBetween(
-    position.latitude, position.longitude,
-    segment.startPoint.latitude, segment.startPoint.longitude
-  );
-  
-  double distanceToEnd = Geolocator.distanceBetween(
-    position.latitude, position.longitude,
-    segment.endPoint.latitude, segment.endPoint.longitude
-  );
-  
-  double segmentLength = Geolocator.distanceBetween(
-    segment.startPoint.latitude, segment.startPoint.longitude,
-    segment.endPoint.latitude, segment.endPoint.longitude
-  );
-  
-  // Point is in zone if it's between start and end with tolerance
-  return (distanceToStart + distanceToEnd) <= (segmentLength + 100); // 100m tolerance
-}
-```
-
-### Session Persistence
-
-Sessions are automatically saved using `SharedPreferences`:
-
-```dart
-Future<void> _saveSession(ZoneSession session) async {
-  final prefs = await SharedPreferences.getInstance();
-  List<String> sessions = prefs.getStringList('highway_sessions') ?? [];
-  sessions.add(jsonEncode(session.toJson()));
-  await prefs.setStringList('highway_sessions', sessions);
-}
-```
-
-### GPS Signal Monitoring
-
-```dart
-void _checkGPSSignal() {
-  if (_lastPositionUpdate != null) {
-    Duration timeSinceLastUpdate = DateTime.now().difference(_lastPositionUpdate!);
-    _gpsSignalLost = timeSinceLastUpdate.inSeconds > 10;
-  }
-}
-```
-
-## 🚀 Installation & Setup
+## 🚀 Quick Start
 
 ### Prerequisites
 
-- **Flutter SDK** (3.0.0 or higher)
+- **Python 3.x** installed on your system
+- Modern web browser with GPS support
+- **HTTPS required** for GPS access (browsers block location in HTTP)
 
-#### For iOS Development:
-- **Xcode** (16.0+ recommended)
-- **iOS device** with iOS 15.0+
-- **Apple Developer Account** (for App Store distribution)
+### Running the Application
 
-#### For Android Development:
-- **Android Studio** (2023.1.1+ recommended)
-- **Android SDK** (API level 24+)
-- **Android device** with Android 7.0+ (API level 24)
-- **Google Play Developer Account** (for Play Store distribution)
-
-### ⚠️ Important Setup Notes
-
-Before following the setup instructions, ensure you have:
-1. **Correct working directory**: Always run commands from the project root directory
-2. **Connected device**: iOS device or Android device for deployment and testing
-3. **Development environment configured**: 
-   - iOS: Xcode with valid development team selected
-   - Android: Android Studio with SDK properly configured
-4. **Network connectivity**: For downloading dependencies during setup
-
-### Development Setup
-
-1. **Clone the repository**:
+1. **Navigate to the web directory**:
 ```bash
-git clone git@github.com:Stamenov/sredna_skorost_bg.git
-cd sredna_skorost_bg
+cd web/
 ```
 
-2. **Install Flutter dependencies**:
+2. **Set up Python virtual environment** (if not already done):
 ```bash
-flutter pub get
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-3. **Platform-specific setup**:
-
-#### iOS Setup:
+3. **Generate SSL certificates** (if needed):
 ```bash
-cd ios && pod install && cd ..
+openssl req -x509 -newkey rsa:2048 -keyout server.key -out server.crt -days 365 -nodes -subj "/CN=localhost"
+cp server.crt server.cert  # Some servers expect .cert extension
 ```
 
-#### Android Setup:
+4. **Start the HTTPS server**:
 ```bash
-# Ensure Android SDK is configured (check with flutter doctor)
-flutter doctor --android-licenses  # Accept licenses if needed
+python3 https_server.py
 ```
 
-4. **Run on device**:
+5. **Open in browser**:
+   - Navigate to: `https://localhost:8443`
+   - Accept the self-signed certificate warning
+   - Grant location permissions when prompted
+
+### ⚠️ Quick HTTP Testing (Limited GPS)
+For quick testing without HTTPS setup:
 ```bash
-# List available devices
-flutter devices
-
-# Run on specific device
-flutter run -d <device-id>
-
-# Or run on any connected device
-flutter run
+python3 -m http.server 8080
 ```
+Then visit `http://localhost:8080` (GPS may not work due to browser security)
 
-## 📱 Platform-Specific Configuration
+### Alternative Server Options
 
-### iOS Configuration
-
-Location permissions are configured in `ios/Runner/Info.plist`:
-
-```xml
-<key>NSLocationWhenInUseUsageDescription</key>
-<string>Това приложение използва GPS за следене на средната скорост в зони за контрол на скоростта.</string>
-<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-<string>Това приложение използва GPS за следене на средната скорост в зони за контрол на скоростта.</string>
-```
-
-### Android Configuration
-
-Location permissions are configured in `android/app/src/main/AndroidManifest.xml`:
-
-```xml
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-<uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
-```
-
-## 🔨 Building for Release
-
-### iOS Release Build
+**Simple HTTPS Server**:
 ```bash
-flutter build ios --release
+python3 simple_https_server.py
 ```
-Then use Xcode to archive and distribute via TestFlight or App Store.
 
-### Android Release Build
+**Using start_server.py**:
 ```bash
-# Quick build with build script
-./android/build_android.sh
-
-# Or manual build
-flutter build apk --release
-# APK location: build/app/outputs/flutter-apk/app-release.apk
+python3 start_server.py
 ```
 
-### Android App Bundle (for Play Store)
-```bash
-flutter build appbundle --release
-# AAB location: build/app/outputs/bundle/release/app-release.aab
-```
+**Note**: All server scripts now use relative paths and should be run from the `web/` directory.
 
-> **📁 Android Development**: See the [`android/`](android/) directory for detailed Android setup, building, and distribution guides:
-> - [Android Development Guide](android/README_ANDROID.md) - Comprehensive Android setup and development
-> - [APK Distribution Guide](android/DISTRIBUTION.md) - Quick guide for sharing Android APKs
+## 📱 Mobile Access
 
-## 📱 Usage Guide
+### QR Code Access
+- Open `qr-https.html` in your browser to generate a QR code
+- Scan with mobile device for quick access
+- Ensure both devices are on the same network
 
-### Starting a Session
-1. Open the app and grant location permissions
-2. Wait for GPS signal to stabilize
-3. Tap **"Старт"** to begin monitoring
-4. Drive normally - the app will automatically detect zone entries
+### Network Access
+The server binds to all interfaces, allowing access from other devices:
+- Find your local IP address: `ifconfig` (Mac/Linux) or `ipconfig` (Windows)
+- Access from mobile: `https://YOUR_IP_ADDRESS:8443`
 
-### During Monitoring
-- **Green guidance**: Current speed is appropriate for maintaining legal average
-- **Red warning**: Current speed is too high - reduce speed immediately
-- **Auto-pause**: App automatically pauses when stopped (detected at <5 km/h for 30+ seconds)
-- **Auto-resume**: App resumes with 3-second countdown when motion detected (>15 km/h)
+## 🧪 Testing Features
 
-### Zone Detection
-- App automatically detects entry into monitored segments
-- Direction is determined using movement vectors
-- Real-time average speed is calculated and displayed
-- Remaining distance and recommended speed are continuously updated
+### Location Testing
+- Open `test-location.html` for GPS functionality testing
+- Verify coordinates are being received correctly
+- Check accuracy and update frequency
+
+### Debug Mode
+- Use `debug.html` for detailed console logging
+- Monitor speed calculations and zone detection
+- View real-time GPS data and algorithm decisions
+
+## 🔧 Key Features
+
+### Real-Time Speed Monitoring
+- GPS-based speed calculation using the Haversine formula
+- 1-second update intervals for precise tracking
+- Speed displayed in km/h with decimal precision
+
+### Highway Zone Detection
+- Automatic detection of entry/exit from monitored segments
+- Support for all 8 A1/E80 highway sections
+- Bidirectional travel detection
+
+### Speed Guidance System
+- Real-time average speed calculation within zones
+- Recommended speed suggestions to maintain legal limits
+- Visual warnings when speed is too high
 
 ### Session Management
-- Sessions are automatically saved when zones are exited
-- Historical data is preserved across app restarts
-- View past sessions using the history button
+- Automatic session tracking and persistence
+- Historical data storage using localStorage
+- Session summary with average speeds and legal compliance
 
-## 🔧 Architecture & Design Decisions
+## 📍 Monitored Highway Segments
 
-### Flutter Framework Choice
-- **Cross-platform compatibility** (iOS/Android)
-- **Native performance** for GPS-intensive operations
-- **Rich UI capabilities** for real-time data visualization
-- **Strong plugin ecosystem** (Geolocator, Flutter Map)
+The web version monitors the same highway sections as the mobile app:
 
-### Offline-First Design
-- **No internet dependency** for core functionality
-- **OpenStreetMap tiles** cached locally
-- **Embedded coordinate data** - no server requests
-- **Local session storage** using SharedPreferences
+1. **Вакарел → Ихтиман** (140 km/h limit)
+2. **Ихтиман → Траянови врата** (140 km/h limit)
+3. **Траянови врата → Белозем** (140 km/h limit)
+4. **Белозем → Капитан Димитриево** (140 km/h limit)
+5. **Капитан Димитриево → Динката** (140 km/h limit)
+6. **Динката → Цалапица** (140 km/h limit)
+7. **Цалапица → Радиново** (140 km/h limit)
+8. **Радиново → Трилистник** (140 km/h limit)
 
-### Real-Time Processing
-- **1-second GPS updates** for precise tracking
-- **Vector-based direction detection** for bidirectional support
-- **Predictive speed calculations** using physics formulas
-- **Automatic state management** with minimal user interaction
+See `README_HIGHWAY_SECTIONS.md` for detailed coordinate information.
 
-### Data Privacy
-- **No data transmission** - all processing is local
-- **Anonymous sessions** - no personal information stored
-- **Open source transparency** - code is fully auditable
-- **User control** - data can be cleared at any time
+## 🔐 SSL Certificate
 
-## 🤝 Contributing
+The included SSL certificate is self-signed for development purposes:
+- **Valid for**: localhost, 127.0.0.1, and local network access
+- **Purpose**: Enable HTTPS for GPS access in browsers
+- **Security**: For development only - use proper certificates in production
 
-We welcome contributions to improve Sredna Skorost BG! Here's how you can help:
+### Generating New Certificates
 
-### Areas for Contribution
-1. **Additional Highway Coverage**: Extend support to other Bulgarian highways
-2. **Android Support**: Port iOS-specific features to Android
-3. **UI/UX Improvements**: Enhance the user interface and experience
-4. **Performance Optimization**: Improve battery usage and GPS accuracy
-5. **Localization**: Add support for additional languages
-6. **Testing**: Add comprehensive unit and integration tests
+If you need to regenerate the SSL certificate:
 
-### Development Process
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+```bash
+openssl req -x509 -newkey rsa:4096 -keyout server.key -out server.crt -days 365 -nodes -subj "/CN=localhost"
+```
 
-### Code Standards
-- Follow Flutter/Dart style guidelines
-- Add comments for complex algorithms
-- Include tests for new features
-- Ensure backwards compatibility
+## 🔍 Troubleshooting
 
-## 🔧 Troubleshooting
+### GPS Not Working
+1. **Ensure HTTPS**: GPS requires secure context (HTTPS)
+2. **Grant Permissions**: Allow location access when prompted
+3. **Check Browser Support**: Use modern browsers (Chrome, Firefox, Safari)
+4. **Test Location**: Use `test-location.html` to verify GPS functionality
 
-### Common Setup Issues
+### Server Issues
+1. **Port Conflicts**: Change port in server files if 8443 is occupied
+2. **Certificate Errors**: Accept self-signed certificate in browser
+3. **Network Access**: Ensure firewall allows connections on the chosen port
 
-#### Flutter App Issues
-- **Dependencies not installing**: Run `flutter clean` then `flutter pub get`
-- **iOS build fails**: Ensure Xcode is properly configured with valid development team
-- **Android build fails**: Ensure Android SDK is installed and configured (run `flutter doctor`)
-- **Device not detected**: Check USB connection and enable Developer Mode/USB Debugging
-- **CocoaPods warnings**: These are usually harmless but can be fixed by updating Podfile platform version
+### Performance Issues
+1. **GPS Accuracy**: Wait for GPS signal to stabilize (may take 30-60 seconds)
+2. **Browser Performance**: Close unnecessary tabs and applications
+3. **Network Latency**: Use local server for best performance
 
-#### iOS-Specific Issues
-- **Code signing errors**: Select valid development team in Xcode project settings
-- **Provisioning profile issues**: Ensure device is registered in Apple Developer account
-- **CarPlay not working**: Requires paid Apple Developer Program membership
+## 📊 Technical Implementation
 
-#### Android-Specific Issues
-- **Android SDK not found**: Install Android Studio and configure SDK path
-- **Gradle build errors**: Update to latest Android Gradle Plugin version
-- **APK install fails**: Enable "Unknown sources" in Android settings
-- **Location permissions denied**: Grant location permissions in Android app settings
-- **Build tools version errors**: Update Android SDK build tools to latest version
+### Speed Calculation Algorithm
+```javascript
+function calculateSpeed(lat1, lon1, lat2, lon2, timeDiff) {
+    // Haversine formula for distance calculation
+    const R = 6371; // Earth's radius in kilometers
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    
+    const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+              Math.sin(dLon/2) * Math.sin(dLon/2);
+              
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    const distance = R * c; // Distance in kilometers
+    
+    return (distance / (timeDiff / 3600000)) || 0; // Speed in km/h
+}
+```
 
-#### Web App Issues  
-- **Server won't start**: Ensure you're in the `web/` directory when running server scripts
-- **HTTPS certificate errors**: Run `openssl req -x509 -newkey rsa:2048 -keyout server.key -out server.crt -days 365 -nodes -subj "/CN=localhost"` in the web directory
-- **GPS not working**: HTTPS is required for location access - use HTTPS server, not HTTP
-- **Port conflicts**: Change port numbers in server scripts if default ports are occupied
+### Zone Detection Logic
+```javascript
+function isInHighwaySegment(lat, lon, segment) {
+    const tolerance = 0.001; // ~100 meters
+    
+    // Check if point lies within segment boundaries
+    const minLat = Math.min(segment.start.lat, segment.end.lat) - tolerance;
+    const maxLat = Math.max(segment.start.lat, segment.end.lat) + tolerance;
+    const minLon = Math.min(segment.start.lon, segment.end.lon) - tolerance;
+    const maxLon = Math.max(segment.start.lon, segment.end.lon) + tolerance;
+    
+    return lat >= minLat && lat <= maxLat && lon >= minLon && lon <= maxLon;
+}
+```
 
-#### General Issues
-- **Permission errors**: Don't use `sudo` - fix permissions or use different directory
-- **Path not found**: Ensure you're in the correct project directory
-- **Git clone issues**: Check network connection and repository access rights
+## 🔄 Comparison with Mobile App
 
-### Getting Help
-If you encounter issues not covered here:
-1. Check existing [GitHub Issues](https://github.com/Stamenov/sredna_skorost_bg/issues)
-2. Run `flutter doctor` for Flutter-related problems
-3. Check console output for specific error messages
-4. Create a new issue with detailed error logs
+### Advantages of Web Version
+- **Universal Access**: Works on any device with a browser
+- **No Installation**: Instant access without app store downloads
+- **Cross-Platform**: Same experience on iOS, Android, desktop
+- **Easy Updates**: Server-side updates affect all users immediately
+
+### Limitations vs Mobile App
+- **Battery Optimization**: Less efficient than native mobile app
+- **Background Operation**: Limited when browser is not active
+- **GPS Accuracy**: May be less precise than native GPS APIs
+- **Offline Support**: Requires internet connection for initial load
+
+## 🚦 Usage Guidelines
+
+### Before Driving
+1. Start the server and open the application
+2. Grant location permissions
+3. Wait for GPS signal to stabilize (green indicator)
+4. Verify speed readings are accurate
+
+### During Monitoring
+1. Keep the browser tab active for continuous tracking
+2. Monitor the speed display and guidance messages
+3. Follow recommended speeds to maintain legal averages
+4. Pay attention to zone entry/exit notifications
+
+### After Driving
+1. Review session summary for legal compliance
+2. Historical data is saved automatically
+3. Server can be stopped when not in use
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This web version is part of the Sredna Skorost BG project and is licensed under the MIT License. See the main project LICENSE file for details.
 
 ## ⚠️ Legal Disclaimer
 
-This application is designed to help drivers maintain legal speeds on Bulgarian highways. However:
-
-- **Driver responsibility**: The driver is solely responsible for following traffic laws
-- **No guarantee**: The app cannot guarantee accuracy in all situations
-- **Use at own risk**: GPS signals can be affected by weather, tunnels, or device issues
-- **Official enforcement**: Only official speed cameras determine legal violations
-- **Supplementary tool**: This app should supplement, not replace, careful driving
-
-## 🙏 Acknowledgments
-
-- **Bulgarian Ministry of Interior**: For transparent speed limit information
-- **OpenStreetMap Contributors**: For detailed highway mapping data
-- **Flutter Community**: For excellent plugins and documentation
-- **Waze Community**: For crowdsourced speed camera locations
-- **Field Research Contributors**: Drivers who helped verify GPS coordinates
-
-## 📞 Support & Contact
-
-- **Issues**: Report bugs and feature requests via [GitHub Issues](https://github.com/Stamenov/sredna_skorost_bg/issues)
-- **Discussions**: Join conversations in [GitHub Discussions](https://github.com/Stamenov/sredna_skorost_bg/discussions)
-- **Email**: For sensitive issues, contact the maintainers directly
+This web application is a development tool and prototype. For actual highway speed monitoring, use the official mobile app which provides better accuracy and reliability. Always follow traffic laws and drive safely.
 
 ---
 
-**Drive safely and help keep Bulgarian roads safer for everyone! 🇧🇬🚗**
+**For the full-featured mobile experience, use the Flutter app available in the main project directory.**

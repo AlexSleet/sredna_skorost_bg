@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access from Phone - HTTPS</title>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .urls {
+            margin: 20px 0;
+            text-align: left;
+        }
+        .url-item {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        .url-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .url-link {
+            font-size: 18px;
+            color: #1976D2;
+            text-decoration: none;
+            word-break: break-all;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .qr-code {
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+        }
+        .instructions {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e3f2fd;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #1565c0;
+            text-align: left;
+        }
+        .steps {
+            background: #f0f7ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        #qrcode1, #qrcode2 {
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Достъп от телефон (HTTPS)</h1>
+        
+        <div class="warning">
+            ⚠️ <strong>Важно:</strong> При отваряне ще видите предупреждение за сигурност. 
+            Това е нормално за локални сертификати. Натиснете "Advanced" или "Подробности" и продължете към сайта.
+        </div>
+        
+        <div class="urls">
+            <div class="url-item">
+                <div class="url-label">HTTPS връзка (Препоръчителна):</div>
+                <a href="https://172.20.10.8:8443" class="url-link">https://172.20.10.8:8443</a>
+                <div id="qrcode1" class="qr-code"></div>
+            </div>
+            
+            <div class="url-item">
+                <div class="url-label">Алтернативна HTTPS връзка:</div>
+                <a href="https://10.7.50.75:8443" class="url-link">https://10.7.50.75:8443</a>
+                <div id="qrcode2" class="qr-code"></div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <strong>Стъпки за достъп:</strong>
+            <ol>
+                <li>Сканирайте QR кода или кликнете линка</li>
+                <li>Когато видите предупреждение за сигурност:
+                    <ul>
+                        <li><strong>Safari:</strong> "Show Details" → "visit this website"</li>
+                        <li><strong>Chrome:</strong> "Advanced" → "Proceed to site"</li>
+                    </ul>
+                </li>
+                <li>Разрешете достъп до локация когато бъдете попитани</li>
+                <li>GPS ще работи правилно през HTTPS</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        // Generate QR codes
+        new QRCode(document.getElementById("qrcode1"), {
+            text: "https://172.20.10.8:8443",
+            width: 200,
+            height: 200
+        });
+        
+        new QRCode(document.getElementById("qrcode2"), {
+            text: "https://10.7.50.75:8443",
+            width: 200,
+            height: 200
+        });
+    </script>
+</body>
+</html>
