@@ -1810,6 +1810,71 @@ function centerOnLocation() {
     }
 }
 
+// Bug report functions
+function toggleBugReport() {
+    const modal = document.getElementById('bug-report-modal');
+    modal.style.display = 'flex';
+    document.getElementById('bug-description').focus();
+}
+
+function closeBugReport() {
+    const modal = document.getElementById('bug-report-modal');
+    modal.style.display = 'none';
+    document.getElementById('bug-description').value = '';
+}
+
+function sendBugReport() {
+    const description = document.getElementById('bug-description').value.trim();
+    
+    if (!description) {
+        alert('Моля, опишете проблема преди да изпратите.');
+        return;
+    }
+    
+    // Gather additional info for context
+    const userAgent = navigator.userAgent;
+    const url = window.location.href;
+    const timestamp = new Date().toLocaleString('bg-BG');
+    const isTracking = activeZone ? 'Да' : 'Не';
+    const currentZone = activeZone ? activeZone.name : 'Няма активна зона';
+    
+    // Prepare WhatsApp message
+    const whatsappMessage = `🐛 БЪГ ДОКЛАД - Sredna Skorost BG
+
+📝 ПРОБЛЕМ:
+${description}
+
+ℹ️ ТЕХНИЧЕСКА ИНФОРМАЦИЯ:
+• Дата: ${timestamp}
+• URL: ${url}
+• Активно проследяване: ${isTracking}
+• Текуща зона: ${currentZone}
+• Устройство: ${userAgent}
+
+---
+Изпратено от web приложението`;
+    
+    // WhatsApp Web API URL
+    const phoneNumber = '491773727379';
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    // Open WhatsApp
+    window.open(whatsappURL, '_blank');
+    
+    // Close modal and show confirmation
+    closeBugReport();
+    showMessage('💬 WhatsApp отворен за изпращане на доклада', 'success');
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', function(e) {
+    const modal = document.getElementById('bug-report-modal');
+    if (e.target === modal) {
+        closeBugReport();
+    }
+});
+
 // Session history functions
 function showSessionHistory() {
     const sessions = getSavedSessions();
