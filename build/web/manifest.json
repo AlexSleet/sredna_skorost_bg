@@ -1,0 +1,40 @@
+{
+    "name": "Sredna Skorost BG",
+    "short_name": "Средна Скорост БГ",
+    "description": "Приложение за контрол на средната скорост по българските магистрали A1/E80",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#1976D2",
+    "theme_color": "#1976D2",
+    "orientation": "portrait",
+    "scope": "/",
+    "lang": "bg",
+    "icons": [
+        {
+            "src": "favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "favicon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["navigation", "productivity", "utilities"],
+    "screenshots": [
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "form_factor": "narrow"
+        }
+    ]
+}
