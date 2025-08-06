@@ -1791,6 +1791,7 @@ function togglePause() {
 // Center on location function
 function centerOnLocation() {
     if (userMarker && map) {
+        // If we already have a marker, center on it
         const latlng = userMarker.getLatLng();
         map.setView(latlng, 15, {
             animate: true,
@@ -1806,7 +1807,65 @@ function centerOnLocation() {
             }, 300);
         }
     } else {
-        showMessage('Няма налична локация', 'warning');
+        // No marker exists yet, get GPS location independently
+        if (!navigator.geolocation) {
+            showMessage('GPS не е достъпен на това устройство', 'error');
+            return;
+        }
+        
+        showMessage('Търсене на локация...', 'info');
+        
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const { latitude, longitude } = position.coords;
+                
+                // Create temporary marker if none exists
+                if (!userMarker) {
+                    userMarker = L.circleMarker([latitude, longitude], {
+                        radius: 10,
+                        color: '#1976D2',
+                        fillColor: '#2196F3',
+                        fillOpacity: 0.8,
+                        weight: 2
+                    }).addTo(map);
+                }
+                
+                // Center map on location
+                map.setView([latitude, longitude], 15, {
+                    animate: true,
+                    duration: 0.5
+                });
+                
+                showMessage('Локация намерена', 'success');
+                
+                // Visual feedback
+                const originalRadius = 10;
+                userMarker.setStyle({ radius: 15 });
+                setTimeout(() => {
+                    userMarker.setStyle({ radius: originalRadius });
+                }, 300);
+            },
+            (error) => {
+                let message = 'Грешка при намиране на локацията';
+                switch(error.code) {
+                    case error.PERMISSION_DENIED:
+                        message = 'Достъпът до GPS е отказан. Моля разрешете достъпа в настройките на браузъра.';
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        message = 'GPS информацията не е налична';
+                        break;
+                    case error.TIMEOUT:
+                        message = 'GPS заявката изтече времето си';
+                        break;
+                }
+                showMessage(message, 'error');
+            },
+            {
+                enableHighAccuracy: true,
+                timeout: 10000,
+                maximumAge: 60000 // Accept cached position up to 1 minute old
+            }
+        );
     }
 }
 

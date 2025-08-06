@@ -99,22 +99,26 @@
         
     </div>
     
+    
+    <!-- Top Right Controls -->
+    <div class="top-right-controls">
+        <button id="history-btn" onclick="showSessionHistory()" title="История на сесиите">
+            <span style="font-size: 14px;">📚</span>
+        </button>
+        <button id="info-btn" onclick="showInfoModal()" title="Информация">
+            <span style="font-size: 14px;">ℹ️</span>
+        </button>
+    </div>
+    
+    <!-- Bottom Control Bar -->
     <div class="control-buttons">
         <button id="tracking-btn" onclick="toggleTracking()">
             <span id="btn-icon">▶</span>
             <span id="btn-text">Започни</span>
         </button>
-        <button id="force-zone-btn" onclick="forceZoneDetection()" style="display: none;">
-            <span id="zone-btn-icon">🎯</span>
-            <span id="zone-btn-text">Намери зона</span>
-        </button>
         <button id="pause-btn" onclick="togglePause()" style="display: none;">
             <span id="pause-icon">⏸️</span>
             <span id="pause-text">Пауза</span>
-        </button>
-        <button id="history-btn" onclick="showSessionHistory()" style="display: block;">
-            <span>📚</span>
-            <span>История</span>
         </button>
     </div>
     
@@ -129,14 +133,6 @@
         </div>
     </div>
     
-    <!-- Deep Sentrics Footer -->
-    <div class="deepsentrics-footer">
-        <a href="https://deepsentrics.com" target="_blank" rel="noopener">
-            <span>Created by</span>
-            <img src="https://deepsentrics.com/wp-content/uploads/2023/08/logo.png" alt="Deep Sentrics" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-            <span style="display:none; font-weight: bold;">DeepSentrics</span>
-        </a>
-    </div>
     
     <!-- Locate Me Button -->
     <button class="locate-me-btn" onclick="centerOnLocation()" title="Центрирай на моята локация">
@@ -175,6 +171,33 @@
         </div>
     </div>
     
+    <!-- Info Modal -->
+    <div id="info-modal" style="display: none;">
+        <div class="info-modal-content">
+            <div class="info-modal-header">
+                <h3>ℹ️ Информация</h3>
+                <button onclick="closeInfoModal()">✕</button>
+            </div>
+            <div class="info-modal-body">
+                <div class="info-section">
+                    <h4>За приложението</h4>
+                    <p>Приложение за контрол на средната скорост по магистрала A1/E80 между Вакарел и Ихтиман.</p>
+                </div>
+                <div class="info-section">
+                    <h4>Как работи</h4>
+                    <p>• Натиснете "Започни" за стартиране на проследяването<br>
+                    • GPS автоматично засича влизането в зоната<br>
+                    • Следете препоръките за спазване на лимита<br>
+                    • Използвайте "Пауза" при нужда</p>
+                </div>
+                <div class="info-section">
+                    <h4>GPS точност</h4>
+                    <p id="gps-accuracy">Проверява се...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="app.js"></script>
     
@@ -199,6 +222,35 @@
             deferredPrompt = e;
             console.log('PWA install prompt available');
         });
+        
+        // Info Modal Functions
+        function showInfoModal() {
+            document.getElementById('info-modal').style.display = 'flex';
+            updateGPSAccuracy();
+        }
+        
+        function closeInfoModal() {
+            document.getElementById('info-modal').style.display = 'none';
+        }
+        
+        function updateGPSAccuracy() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const accuracy = position.coords.accuracy;
+                        document.getElementById('gps-accuracy').textContent = 
+                            `GPS точност: ±${Math.round(accuracy)} метра`;
+                    },
+                    () => {
+                        document.getElementById('gps-accuracy').textContent = 
+                            'GPS не е достъпен';
+                    }
+                );
+            } else {
+                document.getElementById('gps-accuracy').textContent = 
+                    'GPS не се поддържа';
+            }
+        }
     </script>
 </body>
 </html>

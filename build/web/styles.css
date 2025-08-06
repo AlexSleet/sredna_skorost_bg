@@ -4,6 +4,31 @@
     box-sizing: border-box;
 }
 
+/* Remove all button borders and outlines globally */
+button, input[type="button"], input[type="submit"], input[type="reset"] {
+    border: none !important;
+    outline: none !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+}
+
+button:focus, button:active, button:hover {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+}
+
+button:focus-visible {
+    outline: none !important;
+    border: none !important;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     height: 100vh;
@@ -16,7 +41,7 @@ body {
 }
 
 .speed-display {
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
@@ -26,7 +51,7 @@ body {
     box-shadow: 0 5px 20px rgba(0,0,0,0.15);
     min-width: 320px;
     max-width: 400px;
-    max-height: 70vh;
+    max-height: calc(100vh - 140px);
     overflow-y: auto;
     z-index: 1000;
 }
@@ -290,6 +315,7 @@ body {
 .modal-header button {
     background: none;
     border: none;
+    outline: none;
     font-size: 24px;
     cursor: pointer;
     color: #666;
@@ -352,32 +378,45 @@ body {
 }
 
 .control-buttons {
-    position: absolute;
-    bottom: 40px;
+    position: fixed;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 12px;
     align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    min-height: 50px;
 }
 
-#tracking-btn, #force-zone-btn, #pause-btn, #history-btn {
+#tracking-btn, #pause-btn {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 24px;
-    font-size: 16px;
+    border: none !important;
+    outline: none !important;
+    padding: 18px 30px;
+    border-radius: 30px !important;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
     transition: all 0.3s;
-    min-width: 160px;
+    min-width: 180px;
     justify-content: center;
+    height: 70px;
+    overflow: hidden;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 #tracking-btn {
@@ -486,67 +525,87 @@ body {
     .speed-display {
         min-width: 280px;
         padding: 16px;
-        max-height: 60vh;
+        max-height: calc(100vh - 130px);
     }
     
     .speed-value {
         font-size: 20px;
     }
+    
+    .control-buttons {
+        padding: 10px 16px;
+        gap: 8px;
+    }
+    
+    #tracking-btn, #pause-btn {
+        padding: 16px 24px;
+        font-size: 16px;
+        min-width: 160px;
+        height: 60px;
+    }
+    
+    .top-right-controls {
+        top: 16px;
+        right: 8px;
+        gap: 6px;
+    }
+    
+    #history-btn, #info-btn {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        min-height: 36px !important;
+        max-width: 36px !important;
+        max-height: 36px !important;
+        border-radius: 18px !important;
+    }
+    
+    #history-btn span, #info-btn span {
+        font-size: 12px;
+    }
+    
+    .locate-me-btn, .bug-report-btn {
+        width: 36px;
+        height: 36px;
+        bottom: 16px;
+    }
+    
+    .locate-me-btn {
+        left: 16px;
+    }
+    
+    .bug-report-btn {
+        right: 16px;
+    }
 }
 
-/* Deep Sentrics Footer */
-.deepsentrics-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 50px;
-    background: white;
-    border-top: 1px solid #e0e0e0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-}
-
-.deepsentrics-footer a {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: #666;
-    font-size: 12px;
-    padding: 10px 20px;
-    transition: all 0.3s ease;
-}
-
-.deepsentrics-footer a:hover {
-    color: #1976D2;
-}
-
-.deepsentrics-footer img {
-    height: 20px;
-    width: auto;
-}
 
 /* Locate Me Button */
 .locate-me-btn {
     position: fixed;
-    bottom: 70px;
-    left: 16px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    bottom: 20px;
+    left: 20px;
+    width: 43px !important;
+    height: 43px !important;
+    min-width: 43px !important;
+    min-height: 43px !important;
+    max-width: 43px !important;
+    max-height: 43px !important;
+    border-radius: 21.5px !important;
     background: white;
-    border: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border: none !important;
+    outline: none !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15) !important;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 998;
+    z-index: 999;
     transition: all 0.3s ease;
+    overflow: hidden;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .locate-me-btn:hover {
@@ -563,28 +622,33 @@ body {
     height: 24px;
 }
 
-/* Adjust control buttons position */
-.control-buttons {
-    bottom: 60px; /* Moved up to account for footer */
-}
 
 /* Bug Report Button */
 .bug-report-btn {
     position: fixed;
-    bottom: 70px;
-    right: 16px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    bottom: 20px;
+    right: 20px;
+    width: 43px !important;
+    height: 43px !important;
+    min-width: 43px !important;
+    min-height: 43px !important;
+    max-width: 43px !important;
+    max-height: 43px !important;
+    border-radius: 21.5px !important;
     background: white;
-    border: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border: none !important;
+    outline: none !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15) !important;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 998;
+    z-index: 999;
     transition: all 0.3s ease;
+    overflow: hidden;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .bug-report-btn:hover {
@@ -714,4 +778,126 @@ body {
 
 .btn-send svg {
     fill: white;
+}
+
+
+/* Top Right Controls */
+.top-right-controls {
+    position: fixed;
+    top: 20px;
+    right: 11px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#history-btn, #info-btn {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    max-width: 40px !important;
+    max-height: 40px !important;
+    background: white;
+    border: none !important;
+    outline: none !important;
+    border-radius: 20px !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15) !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+#history-btn:hover, #info-btn:hover {
+    background: #f5f5f5;
+    transform: scale(1.05);
+}
+
+#history-btn:active, #info-btn:active {
+    transform: scale(0.95);
+}
+
+/* Info Modal */
+#info-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2001;
+    padding: 20px;
+}
+
+.info-modal-content {
+    background: white;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.info-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.info-modal-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.info-modal-header button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-modal-body {
+    padding: 20px;
+}
+
+.info-section {
+    margin-bottom: 20px;
+}
+
+.info-section:last-child {
+    margin-bottom: 0;
+}
+
+.info-section h4 {
+    margin: 0 0 8px 0;
+    color: #1976D2;
+    font-size: 16px;
+}
+
+.info-section p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
 }
