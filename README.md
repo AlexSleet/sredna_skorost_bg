@@ -8,7 +8,7 @@
 
 ## 🌐 Уеб версия - Използвай директно от браузъра!
 
-**🔗 Линк: https://srednaskorost.deepsentrics.com/ **
+**🔗 Линк: https://srednaskorost.deepsentrics.com**
 
 Не е нужно да изтегляте нищо - отворете линка и започвайте да използвате веднага!
 
